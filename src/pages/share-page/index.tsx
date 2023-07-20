@@ -30,7 +30,7 @@ function SharePage() {
   }, [userid, shareid, navigate]);
 
   return (
-    <ResponsiveLayout>
+    <ResponsiveLayout className="bg-white dark:bg-[#15171a]">
       <Suspense fallback={<Fallback />}>
         <Outlet context={{ chat: data, isLoading, error }} />
       </Suspense>
