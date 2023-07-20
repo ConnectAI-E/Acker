@@ -3,10 +3,9 @@ import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { IconDoubleChevronLeft, IconDoubleChevronRight, IconExternalOpenStroked, IconImage } from '@douyinfe/semi-icons';
 import {
-  Button, ButtonGroup, Notification, Spin, Toast, Typography 
+  Button, ButtonGroup, Notification, Spin, Typography
 } from '@douyinfe/semi-ui';
 import { PhotoSlider } from 'react-photo-view';
-import CopyToClipboard from 'react-copy-to-clipboard';
 import renderToolbar from '@/components/midjourney-chat/Toolbar';
 import useHtmltoCanvas from '@/hooks/useHtmltoCanvas';
 import useCurrentChat from '@/hooks/useCurrentChat';
@@ -46,23 +45,16 @@ const ShareGroup: React.FC = function ShareGroup() {
         const shareUrl = userid ? `${window.location.origin}/share-page/${userid}/${chatId}` : t('userid not found');
         Notification.success({
           title: t('share.success'),
-          duration: 2000,
-          style: { maxWidth: '90vw' },
+          duration: 40,
           content: (
-            <div className="flex flex-col">
-              <Typography.Text
-                link
-                className="max-w-full w-[400px] my-3"
-                // ellipsis={{ showTooltip: false, pos: 'middle' }}
-              >
-                {shareUrl}
-              </Typography.Text>
-              <div>
-                <CopyToClipboard text={shareUrl} onCopy={() => Toast.success(t('copy.success'))}>
-                  <Typography.Text link>{t('Copy')}</Typography.Text>
-                </CopyToClipboard>
-              </div>
-            </div>
+            <Typography.Text
+              link
+              copyable={{ content: shareUrl, successTip: t('copy.success') }}
+              ellipsis={{ showTooltip: false, pos: 'middle' }}
+              style={{ maxWidth: '100%', width: '400px' }}
+            >
+              {shareUrl}
+            </Typography.Text>
           )
         });
       }).catch(() => {}).finally(() => {
@@ -75,7 +67,7 @@ const ShareGroup: React.FC = function ShareGroup() {
     <div
       className={classNames(
         'absolute top-10 right-0 rounded-l-full shadow overflow-hidden transition-transform',
-        'border-[2px] border-[var(--semi-color-border)] bg-white dark:bg-[#15171a] html2canvas-ignore',
+        'border-[2px] border-[var(--semi-color-border)] html2canvas-ignore',
         { 'translate-x-[calc(100%-40px)]': !show }
       )}
     >

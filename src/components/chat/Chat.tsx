@@ -168,12 +168,9 @@ const Chat: React.FC = function Chat() {
     <div className="flex-1 overflow-hidden relative">
       <div className="h-full relative">
         <div className="h-full w-full overflow-y-auto" ref={scrollRef}>
-          { (data.length > 0 || question) ? (
-            <div
-              id="chat-content"
-              className="flex flex-col items-center text-sm"
-            >
-              { data.map(renderConversationItem) }
+          {(data.length > 0 || question) ? (
+            <div id="chat-content" className="flex flex-col items-center text-sm">
+              {data.map(renderConversationItem)}
               <ShareGroup />
             </div>
           ) : <ProjectSourceInfo /> }
