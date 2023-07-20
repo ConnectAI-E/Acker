@@ -1,16 +1,16 @@
 {
-  "name": "reactjs-vite-tailwindcss-boilerplate",
-  "description": "This is a boilerplate build with Vite, React 18, TypeScript, Vitest, Testing Library, TailwindCSS 3, Eslint and Prettier.",
+  "name": "aker",
+  "description": "AI Hacker Arena",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "author": {
-    "name": "João Paulo Moraes",
-    "email": "joaopaulomoraes@outlook.com",
-    "url": "https://github.com/joaopaulomoraes"
+    "name": "ConnectAI",
+    "email": "hi@connectai-e.com",
+    "url": "https://www.connectai-e.com/"
   },
   "bugs": {
-    "url": "https://github.com/joaopaulomoraes/reactjs-vite-tailwindcss-boilerplate/issues",
-    "email": "joaopaulomoraes@outlook.com"
+    "url": "https://github.com/ConnectAI-E/Aker/issues",
+    "email": "hi@connectai-e.com"
   },
   "scripts": {
     "dev": "vite",
