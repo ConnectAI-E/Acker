@@ -1,4 +1,9 @@
 # acker
-🤫 暂且不告诉你这个仓库的用途
---
+
+
+## Glossary
+
+**🥷 Acker**: AI-Hacker
+
+**🧿 LUI**: LLM Language User Interface (TUI - GUI - LUI）
 
