@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { IconUserStroked } from '@douyinfe/semi-icons';
 import AutoTextArea from '@/components/auto-textarea';
 import useResponsiveMobile from '@/hooks/useResponsiveMobile';
-import Hot from '@/assets/svg/Hot.svg';
+import Hot from '@/assets/svg/hot.svg';
 import FooterItem from './FooterItem';
 import { FooterProps } from './FooterProps';
 
