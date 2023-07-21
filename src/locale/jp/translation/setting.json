@@ -1,0 +1,22 @@
+{
+  "my info": "私の情報",
+  "api keys": "APIキー",
+  "create at": "作成時間: {{time}}",
+  "sign in": "サインイン",
+  "sign up": "サインアップ",
+  "sign out": "ログアウト",
+  "Confirm": "確認",
+  "Cancel": "キャンセル",
+  "theme": "テーマ",
+  "Email": "メール",
+  "Setting": "設定",
+  "Light": "ライト",
+  "Dark": "ダーク",
+  "Automatic": "システムに従う",
+  "language": "言語",
+  "clear history": {
+    "name": "チャット履歴を削除",
+    "title": "すべての対話を削除してもよろしいですか？",
+    "content": "一度削除すると、すべての対話が削除され、復元することはできません。"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "chat": "对话",
+  "edit": "编辑",
+  "delete": "删除",
+  "Delete": "删除",
+  "Share": "分享",
+  "Options": "选项",
+  "cancel": "取消",
+  "Create": "创建",
+  "Search": "搜索",
+  "Modify": "修改",
+  "Reset": "重置",
+  "Save": "保存",
+  "Copy": "复制",
+  "Reload": "重新加载",
+  "Confirm": "确认",
+  "Cancel": "取消",
+  "Chat": "聊天",
+  "Explore": "发现",
+  "My AI": "AI助理",
+  "My": "我的",
+  "my ai": "我的AI助理 💼 ",
+  "system ai": "系统AI助理 🤖️",
+  "new chat": "新对话",
+  "top rated": "最受好评",
+  "ai topics": "话题",
+  "hot topics": "热门话题",
+  "empty prompt": "[empty prompt]",
+  "regenerate response": "重新生成回答",
+  "stop generating": "停止生成",
+  "sure confirm": "你确定吗?",
+  "home title": "AI Hacker Arabia",
+  "ai assistant": "AI助手",
+  "feature upcoming": "该功能即将上线",
+  "conversation list": "聊天列表",
+  "create page": "创建页面",
+  "empty chat": "空会话",
+  "unknown error": "未知错误，请重试",
+  "no data": {
+    "title": "暂无数据",
+    "user message": "点击下方按钮新建一个个人助理"
+  },
+  "deletion": {
+    "success": "删除成功!",
+    "failed": "删除失败..."
+  },
+  "creation": {
+    "success": "创建成功!",
+    "failed": "创建失败..."
+  },
+  "update": {
+    "success": "更新成功!",
+    "failed": "更新失败..."
+  },
+  "save": {
+    "success": "保存成功!",
+    "failed": "保存失败..."
+  },
+  "copy": {
+    "success": "复制成功!",
+    "failed": "复制失败..."
+  },
+  "share": {
+    "success": "分享成功!",
+    "failed": "分享失败..."
+  },
+  "select tips": "请至少选中一处对话",
+  "select all": "全选",
+  "chat input placeholder": "发消息给AI",
+  "host not fuound": "API HOST为空。请检查配置。",
+  "tomorrow": "明天",
+  "yesterday": "昨天",
+  "file limit error": "上传文件大小最大为50Mb. {{name}}已经超过了这个限制.",
+  "generate save error": "对话正在生成中，请稍后再试。",
+  "get url error with no login": "您需要先登录才能获取上传文件URL",
+  "upload error with no login": "您需要先登录才能上传文件",
+  "chat page info": "本网站由<click>AIOS</click>社区提供API和网页端服务",
+  "userid not found": "未知错误, 没有找到userid"
+}

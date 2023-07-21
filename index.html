@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <!-- 预请求react-simple-editor组件的css文件 -->
+  <!-- <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" as="style" /> -->
+  <meta name="description" content="AI Hacker Arena"/>
+  <link rel="apple-touch-icon" href="/icon192.png" />
+  <title>Acker - AI Hacker Arena</title>
+</head>
+
+<body class="font-sans bg-gray-100 dark:bg-[#17191f]">
+  <div id="app"></div>
+  <script>
+    (function () {
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const setting = localStorage.getItem('theme') || 'auto';
+      if (setting === 'dark' || (prefersDark && setting !== 'light')) {
+        document.documentElement.classList.toggle('dark', true);
+        document.body.setAttribute('theme-mode', 'dark');
+      }
+    })();
+  </script>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+{
+  "my info": "My information",
+  "api keys": "API Keys",
+  "create at": "Created at: {{time}}",
+  "sign in": "Sign in",
+  "sign up": "Sign up",
+  "sign out": "Sign out",
+  "Confirm": "Confirm",
+  "Cancel": "Cancel",
+  "theme": "theme",
+  "Email": "Email",
+  "Setting": "Setting",
+  "Light": "Light",
+  "Dark": "Dark",
+  "Automatic": "Automatic",
+  "language": "Language",
+  "clear history": {
+    "name": "Clear chat history",
+    "title": "Are you sure you want to delete all conversations?",
+    "content": "Once deleted, all conversations will be removed and cannot be restored."
+  }
+}

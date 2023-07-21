@@ -1,0 +1,150 @@
+[
+    {
+        "id": 1,
+        "title": "Advertising Creativity",
+        "background": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/pic1.png",
+        "avatar": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/avatar1.png",
+        "roleType": "AI",
+        "nickname": "Lyra Jade",
+        "author": "Annie",
+        "followerCount": 18009,
+        "usedCount": 19372217,
+        "isTopRated": true,
+        "contextExamples": [
+            "How to effectively use emotional vocabulary?",
+            "Provide some successful advertising creativity cases",
+            "How to convey the values and mission of a brand?"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Multilingual Machine Translation",
+        "background": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/pic2.png",
+        "avatar": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/avatar1.png",
+        "roleType": "AI",
+        "nickname": "Autumn Grace",
+        "author": "Luna",
+        "followerCount": 19545,
+        "usedCount": 18251643,
+        "isTopRated": true,
+        "contextExamples": [
+            "Can you translate a sentence for us?",
+            "How to solve language barriers and cultural differences in machine translation?"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Psychological Chat Room",
+        "background": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/pic1.png",
+        "avatar": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/avatar1.png",
+        "roleType": "AI",
+        "nickname": "Kian Alexander",
+        "author": "Phoenix",
+        "followerCount": 16047,
+        "usedCount": 17708149,
+        "isTopRated": true,
+        "contextExamples": [
+            "How to deal with psychological trauma and pressure?",
+            "How to determine if a person needs psychological counseling?"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Smart Home",
+        "background": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/pic2.png",
+        "avatar": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/avatar2.png",
+        "roleType": "AI",
+        "nickname": "Aurora Faith",
+        "author": "Eden",
+        "followerCount": 13295,
+        "usedCount": 11124742,
+        "isTopRated": false,
+        "contextExamples": [
+            "What are the concepts and advantages of smart homes?",
+            "How to ensure the security and privacy of smart home devices?",
+            "How to choose suitable smart home devices and systems?"
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Financial Trading",
+        "background": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/pic2.png",
+        "avatar": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/avatar2.png",
+        "roleType": "AI",
+        "nickname": "Orion Grey",
+        "author": "Kian",
+        "followerCount": 18908,
+        "usedCount": 12709851,
+        "isTopRated": false,
+        "contextExamples": [
+            "How to choose a brokerage firm and trading platform?",
+            "What are the future trends of financial trading?"
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Maternal and Child Education",
+        "background": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/pic2.png",
+        "avatar": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/avatar2.png",
+        "roleType": "AI",
+        "nickname": "Aurora Faith",
+        "author": "Ember",
+        "followerCount": 19351,
+        "usedCount": 101667,
+        "isTopRated": false,
+        "contextExamples": [
+            "What are the differences between breastfeeding and artificial feeding?",
+            "How to choose suitable toys and games for babies?",
+            "How to deal with emotional and behavioral problems in babies?"
+        ]
+    },
+    {
+        "id": 7,
+        "title": "Job Hunting and Career Planning",
+        "background": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/pic1.png",
+        "avatar": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/avatar2.png",
+        "roleType": "AI",
+        "nickname": "Eden Sky",
+        "author": "Lennon",
+        "followerCount": 13295,
+        "usedCount": 5259344,
+        "isTopRated": true,
+        "contextExamples": [
+            "How to choose a suitable career?",
+            "Howto create an excellent resume and cover letter?",
+            "How to improve one's professional skills and competitiveness?"
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Exploration of Photography and Videography",
+        "background": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/pic1.png",
+        "avatar": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/avatar2.png",
+        "roleType": "AI",
+        "nickname": "Rowan Oliver",
+        "author": "Rowan",
+        "followerCount": 4725,
+        "usedCount": 82374,
+        "isTopRated": true,
+        "contextExamples": [
+            "How to choose a suitable camera and lens?",
+            "How to take beautiful, vivid, and expressive photos and videos?"
+        ]
+    },
+    {
+        "id": 9,
+        "title": "World History",
+        "background": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/pic2.png",
+        "avatar": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/avatar2.png",
+        "roleType": "AI",
+        "nickname": "Soren Asher",
+        "author": "Zara",
+        "followerCount": 1252,
+        "usedCount": 5259,
+        "isTopRated": false,
+        "contextExamples": [
+            "Overview of the development of world history",
+            "What are the future trends in historical research and education?"
+        ]
+    }
+]

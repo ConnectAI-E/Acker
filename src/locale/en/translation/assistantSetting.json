@@ -1,0 +1,46 @@
+{
+  "chat setting": "Chat Setting",
+  "general": "General",
+  "advanced": "Advanced",
+  "Assistant": "Assistant",
+  "Create": "Create",
+  "Search": "Search",
+  "Modify": "Modify",
+  "Reset": "Reset",
+  "Save": "Save",
+  "Titles": "Title",
+  "Source": "Source",
+  "Create model": "Create model",
+  "id": "id",
+  "title": "title",
+  "url invalid": "The URL is invalid",
+  "upload success": "Upload successful!",
+  "required error": "{{value}} is required",
+  "redirect": {
+    "name": "redirect",
+    "content": "Redirect to source chat"
+  },
+  "assistant": {
+    "model": "model",
+    "alias": "alias",
+    "name": "name",
+    "avatar": "avatar",
+    "prompt": {
+      "name": "prompt",
+      "tips": "To make the AI's answers more accurate, you need to use the \"user\" and \"assistant\" types in pairs when using them.",
+      "role": "role",
+      "content": "content",
+      "add": "Add",
+      "no role error": "Please Select a role",
+      "no content error": "Please fill in some system message"
+    },
+    "configuration": {
+      "apiHost": "apiHost",
+      "apiKey": "apiKey",
+      "temperature": "temperature",
+      "presence_penalty": "presence_penalty",
+      "frequency_penalty": "frequency_penalty",
+      "stream": "stream"
+    }
+  }
+}

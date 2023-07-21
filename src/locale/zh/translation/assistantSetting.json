@@ -1,0 +1,46 @@
+{
+  "chat setting": "聊天设置",
+  "general": "常规",
+  "advanced": "高级",
+  "Assistant": "助理",
+  "Create": "创建",
+  "Search": "搜索",
+  "Modify": "修改",
+  "Reset": "重置",
+  "Save": "保存",
+  "Titles": "标题",
+  "Source": "来源",
+  "Create model": "创建模型",
+  "id": "id",
+  "title": "标题",
+  "url invalid": "URL格式不合法",
+  "upload success": "上传成功！",
+  "required error": "{{value}}是必填项",
+  "redirect": {
+    "name": "重定向",
+    "content": "重定向到源聊天"
+  },
+  "assistant": {
+    "model": "模型",
+    "alias": "别名",
+    "name": "名称",
+    "avatar": "头像",
+    "prompt": {
+      "name": "prompt(提示)",
+      "tips": "为了使AI的答案更加准确, 使用时需要配对使用\"用户\"和\"助理\"类型。",
+      "role": "角色",
+      "content": "内容",
+      "add": "添加",
+      "no role error": "请选择一个角色",
+      "no content error": "请填入一些提示信息"
+    },
+    "configuration": {
+      "apiHost": "apiHost",
+      "apiKey": "api密钥(apiKey)",
+      "temperature": "温度(temperature)",
+      "presence_penalty": "存在惩罚(presence_penalty)",
+      "frequency_penalty": "频率惩罚(frequency_penalty)",
+      "stream": "流(stream)"
+    }
+  }
+}

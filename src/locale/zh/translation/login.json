@@ -1,0 +1,25 @@
+{
+  "title": "登录",
+  "Welcome": "欢迎登录",
+  "login tips": "请输入您的 <b>{{type}}</b> 来登录您的帐户。",
+  "check tips": "检查您的{{type}}",
+  "email sign in": "邮箱登录",
+  "code sign in": "验证码登录",
+  "email validate": "请输入有效的电子邮件地址。",
+  "phone validate": "请输入有效的手机格式。",
+  "login code placeholder": "请输入登录验证码",
+  "login code validate": "登录验证码必须是6个字符。",
+  "continue with": "第三方账号登录",
+  "Github": "Github",
+  "sent success tips": "我们向 <b>{{value}}</b> 发送了一个验证码和一个登录链接。如果未收到，请确保检查一下您的垃圾邮件。",
+  "login success": "登录成功!",
+  "email": {
+    "upper": "邮箱",
+    "lower": "邮箱"
+  },
+  "phone": {
+    "upper": "手机",
+    "lower": "手机"
+  },
+  "not login tips": "您还未登录，请点击<click>这里</click>登录"
+}

@@ -1,0 +1,79 @@
+{
+  "chat": "chat",
+  "edit": "edit",
+  "delete": "delete",
+  "Delete": "Delete",
+  "Share": "Share",
+  "Options": "Options",
+  "cancel": "cancel",
+  "Create": "Create",
+  "Search": "Search",
+  "Modify": "Modify",
+  "Reset": "Reset",
+  "Save": "Save",
+  "Copy": "Copy",
+  "Reload": "Reload",
+  "Confirm": "Confirm",
+  "Cancel": "Cancel",
+  "Chat": "Chat",
+  "Explore": "Explore",
+  "My AI": "My AI",
+  "My": "Me",
+  "my ai": "My assistant 💼 ",
+  "system ai": "System assistant 🤖️",
+  "new chat": "New Chat",
+  "top rated": "Top Rated",
+  "ai topics": "AI Topics",
+  "hot topics": "Hot Topics",
+  "empty prompt": "[empty prompt]",
+  "regenerate response": "Regenerate response",
+  "stop generating": "Stop generating",
+  "sure confirm": "Are you sure?",
+  "home title": "Transforming AI Chatting, Empowering Creators",
+  "ai assistant": "AI Assistant",
+  "feature upcoming": "This feature will be updated in future releases.",
+  "conversation list": "Conversation List",
+  "create page": "Create page",
+  "empty chat": "empty",
+  "unknown error": "Something went wrong. Please try again",
+  "no data": {
+    "title": "No data",
+    "user message": "Click the button below to create a new one"
+  },
+  "deletion": {
+    "success": "Deletion successful!",
+    "failed": "Deletion failed..."
+  },
+  "creation": {
+    "success": "Creation successful!",
+    "failed": "Creation failed..."
+  },
+  "update": {
+    "success": "Update successful!",
+    "failed": "Update failed..."
+  },
+  "save": {
+    "success": "Save successful!",
+    "failed": "Save failed..."
+  },
+  "copy": {
+    "success": "Copy successful!",
+    "failed": "Copy failed..."
+  },
+  "share": {
+    "success": "Successful sharing!",
+    "failed": "Sharing failed..."
+  },
+  "select tips": "Please select at least one option.",
+  "select all": "Select All",
+  "chat input placeholder": "Send a message to AI",
+  "host not fuound": "API HOST not fuound",
+  "tomorrow": "Tomorrow",
+  "yesterday": "Yesterday",
+  "file limit error": "The file size cannot exceed 50Mb. {{name}} has exceeded this limit.",
+  "generate save error": "The conversation is still generating. Please try again later.",
+  "get url error with no login": "You need to log in first before you can get upload url.",
+  "upload error with no login": "You need to log in first before you can upload files.",
+  "chat page info": " This website is provided with APIs and web services by the <click>AIOS</click> community.",
+  "userid not found": "Something is wrong, userid not found"
+}

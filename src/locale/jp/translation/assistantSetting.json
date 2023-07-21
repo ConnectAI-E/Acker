@@ -1,0 +1,46 @@
+{
+  "chat setting": "チャット設定",
+  "general": "一般",
+  "advanced": "詳細",
+  "Assistant": "アシスタント",
+  "Create": "作成",
+  "Search": "検索",
+  "Modify": "修正",
+  "Reset": "リセット",
+  "Save": "保存",
+  "Titles": "タイトル",
+  "Source": "ソース",
+  "Create model": "モデルを作成",
+  "id": "id",
+  "title": "タイトル",
+  "url invalid": "URLの形式が無効です",
+  "upload success": "アップロード成功！",
+  "required error": "{{value}}が必要です",
+  "redirect": {
+    "name": "リダイレクト",
+    "content": "ソースチャットにリダイレクト"
+  },
+  "assistant": {
+    "model": "モデル",
+    "alias": "別名",
+    "name": "名前",
+    "avatar": "アバター",
+    "prompt": {
+      "name": "プロンプト(prompt)",
+      "tips": "AIの答えをより正確にするためには、「ユーザー」と「アシスタント」のタイプをペアで使用する必要があります。",
+      "role": "役割",
+      "content": "コンテンツ",
+      "add": "追加",
+      "no role error": "役割を選択してください",
+      "no content error": "いくつかのヒント情報を入力してください"
+    },
+    "configuration": {
+      "apiHost": "apiHost",
+      "apiKey": "apiキー(apiKey)",
+      "temperature": "温度(temperature)",
+      "presence_penalty": "プレゼンスペナルティ(presence_penalty)",
+      "frequency_penalty": "頻度ペナルティ(frequency_penalty)",
+      "stream": "ストリーム(stream)"
+    }
+  }
+}

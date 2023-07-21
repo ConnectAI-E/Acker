@@ -1,0 +1,135 @@
+[
+    {
+        "categoryTitle": "Grammar and Translation",
+        "data": [
+            {
+                "context": "How to pronounce the word auxiliary?"
+            },
+            {
+                "context": "Correct the following sentence to normal English. All humans are created equal"
+            },
+            {
+                "context": "Translate the word Hello to Portuguese"
+            }
+        ]
+    },
+    {
+        "categoryTitle": "Marketing and Brainstorming",
+        "data": [
+            {
+                "context": "I need to create a marketing campaign for a product launch for a new line of travel shoes. Can you suggest some creative ideas for promotional strategy?"
+            },
+            {
+                "context": "What are the best strategies for social media advertising for small businesses?"
+            },
+            {
+                "context": "Generate Top 10 small business ideas"
+            },
+            {
+                "context": "Brainstorm list of gifts for my uncle Peter. He likes cars and pets."
+            }
+        ]
+    },
+    {
+        "categoryTitle": "Diet and Fitness",
+        "data": [
+            {
+                "context": "How to perfect my boxing skills?"
+            },
+            {
+                "context": "Write me a training plan to improve my muscle strength and volume. My weight is 75 kg, my height is 180."
+            },
+            {
+                "context": "How Scandinavian walk improves my cardiovascular health?"
+            },
+            {
+                "context": "Give the the best recipe for lasagna"
+            },
+            {
+                "context": "What are some healthy meal options for meal prep on a busy schedule?"
+            },
+            {
+                "context": "How much calories in Beef Burger?"
+            }
+        ]
+    },
+    {
+        "categoryTitle": "Travel tips",
+        "data": [
+            {
+                "context": "Recommend me Top 10 oldest castles to visit in Europe and North Africa"
+            },
+            {
+                "context": "What are some budget-friendly tips for traveling?"
+            }
+        ]
+    },
+    {
+        "categoryTitle": "School exams",
+        "data": [
+            {
+                "context": "I am feeling anxious about the upcoming physics exam."
+            },
+            {
+                "context": "What are effective studying techniques for final exams in high school?"
+            },
+            {
+                "context": "Write an essay in 500 words about \"The history of modern Art\""
+            },
+            {
+                "context": "How to prepare IELTS exams?"
+            },
+            {
+                "context": "How to crack coding interview? I am planning to apply for Microsoft"
+            }
+        ]
+    },
+    {
+        "categoryTitle": "Social media",
+        "data": [
+            {
+                "context": "I need to create an email marketing campaign for a product launch for a new line of travel shoes. Can you suggest some creative ideas for promotional strategy?"
+            },
+            {
+                "context": "Write a professional email response. I want to say \"I ask for bonuses for my salary\""
+            },
+            {
+                "context": "Generate Instagram caption for the post about \"How to prepare a Turkey\""
+            },
+            {
+                "context": "How to write the best motivational letter. Give the guideline and small life hacks."
+            }
+        ]
+    },
+    {
+        "categoryTitle": "Assignments",
+        "data": [
+            {
+                "context": "Write a cold outreach email. I am selling professional SEO optimization services."
+            }
+        ]
+    },
+    {
+        "categoryTitle": "Writing assistant",
+        "data": [
+            {
+                "context": "Write a screenplay text like Romeo and Juliet"
+            },
+            {
+                "context": "Write an outline text for my new horror book"
+            },
+            {
+                "context": "Continue the story in a new paragraph \"Once upon a time, there was a beautiful princess who lived in a big castle, her name was Kate She had a teddy bear named Billy\""
+            },
+            {
+                "context": "Write a romantic message saying how much I love my wife."
+            },
+            {
+                "context": "Write a scenario for my new TikTok video about \"1000 kids vs 100 adults\""
+            },
+            {
+                "context": "Write a message like a wine expert. Describe how to drink Chardonnay Wine"
+            }
+        ]
+    }
+]

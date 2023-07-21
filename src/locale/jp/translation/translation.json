@@ -1,0 +1,79 @@
+{
+  "chat": "チャット",
+  "edit": "編集",
+  "delete": "削除",
+  "Delete": "削除",
+  "Share": "共有",
+  "Options": "オプション",
+  "cancel": "キャンセル",
+  "Create": "作成",
+  "Search": "検索",
+  "Modify": "変更",
+  "Reset": "リセット",
+  "Save": "保存",
+  "Copy": "コピー",
+  "Reload": "リロード",
+  "Confirm": "確認",
+  "Cancel": "キャンセル",
+  "Chat": "チャット",
+  "Explore": "探索",
+  "My AI": "私のAI",
+  "My": "私の",
+  "my ai": "私のアシスタント 💼 ",
+  "system ai": "システムアシスタント 🤖️",
+  "new chat": "新規チャット",
+  "top rated": "トップ評価",
+  "ai topics": "AIトピックス",
+  "hot topics": "ホットトピック",
+  "empty prompt": "[empty prompt]",
+  "regenerate response": "レスポンスを再生成",
+  "stop generating": "生成を停止",
+  "sure confirm": "よろしいですか？",
+  "home title": "AIチャットの変革、クリエイターの力を引き出す",
+  "ai assistant": "AIアシスタント",
+  "feature upcoming": "この機能は近日公開予定です",
+  "conversation list": "チャットリスト",
+  "create page": "ページを作成",
+  "empty chat": "空のチャット",
+  "unknown error": "何か問題が発生しました。もう一度お試しください",
+  "no data": {
+    "title": "データなし",
+    "user message": "下のボタンをクリックして新しいものを作成してください"
+  },
+  "deletion": {
+    "success": "削除成功！",
+    "failed": "削除失敗..."
+  },
+  "creation": {
+    "success": "作成成功！",
+    "failed": "作成失敗..."
+  },
+  "update": {
+    "success": "更新成功！",
+    "failed": "更新失敗..."
+  },
+  "save": {
+    "success": "保存成功！",
+    "failed": "保存失敗..."
+  },
+  "copy": {
+    "success": "コピー成功!",
+    "failed": "コピー失敗..."
+  },
+  "share": {
+    "success": "シェア成功!",
+    "failed": "シェア失敗..."
+  },
+  "select tips": "少なくとも一つのオプションを選択してください。",
+  "select all": "全て選択",
+  "chat input placeholder": "AIにメッセージを送る",
+  "host not fuound": "APIホストが空です。設定を確認してください。",
+  "tomorrow": "明日",
+  "yesterday": "昨日",
+  "file limit error": "ファイルのサイズは50Mbを超えることができません。{{name}}はこの制限を超えました。",
+  "generate save error": "会話はまだ生成中です。後でもう一度試してください。",
+  "get url error with no login": "アップロードURLを取得する前に、最初にログインする必要があります。",
+  "upload error with no login": "ファイルをアップロードする前に、先にログインする必要があります。",
+  "chat page info": "このウェブサイトは、<click>AIOS</click>コミュニティによってAPIとウェブページサービスが提供されています。",
+  "userid not found": "何かが間違っています、ユーザーIDが見つかりません"
+}

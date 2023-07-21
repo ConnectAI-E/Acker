@@ -1,0 +1,150 @@
+[
+  {
+      "id": 1,
+      "title": "广告创意",
+      "background": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/pic1.png",
+      "avatar": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/avatar1.png",
+      "roleType": "AI",
+      "nickname": "Lyra Jade",
+      "author": "Annie",
+      "followerCount": 18009,
+      "usedCount": 19372217,
+      "isTopRated": true,
+      "contextExamples": [
+          "如何在有效地使用情感词汇？",
+          "提供一些成功的广告创意案例",
+          "如何传达品牌的价值观和使命？"
+      ]
+  },
+  {
+      "id": 2,
+      "title": "多语言机器翻译",
+      "background": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/pic2.png",
+      "avatar": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/avatar1.png",
+      "roleType": "AI",
+      "nickname": "Autumn Grace",
+      "author": "Luna",
+      "followerCount": 19545,
+      "usedCount": 18251643,
+      "isTopRated": true,
+      "contextExamples": [
+          "你能为我们翻译一句话吗？",
+          "如何解决机器翻译中的语言障碍和文化差异？"
+      ]
+  },
+  {
+      "id": 3,
+      "title": "心理聊天室",
+      "background": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/pic1.png",
+      "avatar": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/avatar1.png",
+      "roleType": "AI",
+      "nickname": "Kian Alexander",
+      "author": "Phoenix",
+      "followerCount": 16047,
+      "usedCount": 17708149,
+      "isTopRated": true,
+      "contextExamples": [
+          "如何应对心理创伤和心理压力？",
+          "如何判断一个人是否需要心理咨询？"
+      ]
+  },
+  {
+      "id": 4,
+      "title": "智能家居",
+      "background": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/pic2.png",
+      "avatar": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/avatar2.png",
+      "roleType": "AI",
+      "nickname": "Aurora Faith",
+      "author": "Eden",
+      "followerCount": 13295,
+      "usedCount": 11124742,
+      "isTopRated": false,
+      "contextExamples": [
+          "智能家居的概念和优势有哪些？",
+          "如何确保智能家居设备的安全和隐私？",
+          "如何选择合适的智能家居设备和系统？"
+      ]
+  },
+  {
+      "id": 5,
+      "title": "金融交易",
+      "background": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/pic2.png",
+      "avatar": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/avatar2.png",
+      "roleType": "AI",
+      "nickname": "Orion Grey",
+      "author": "Kian",
+      "followerCount": 18908,
+      "usedCount": 12709851,
+      "isTopRated": false,
+      "contextExamples": [
+          "如何选择券商和交易平台？",
+          "未来金融交易的发展趋势是什么？"
+      ]
+  },
+  {
+      "id": 6,
+      "title": "母婴教育",
+      "background": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/pic2.png",
+      "avatar": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/avatar2.png",
+      "roleType": "AI",
+      "nickname": "Aurora Faith",
+      "author": "Ember",
+      "followerCount": 19351,
+      "usedCount": 101667,
+      "isTopRated": false,
+      "contextExamples": [
+          "母乳喂养和人工喂养有什么区别？",
+          "如何选择适合婴儿的玩具和游戏？",
+          "如何处理婴儿的情绪和行为问题？"
+      ]
+  },
+  {
+      "id": 7,
+      "title": "求职与职业规划",
+      "background": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/pic1.png",
+      "avatar": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/avatar2.png",
+      "roleType": "AI",
+      "nickname": "Eden Sky",
+      "author": "Lennon",
+      "followerCount": 13295,
+      "usedCount": 5259344,
+      "isTopRated": true,
+      "contextExamples": [
+          "如何选择合适的职业？",
+          "如何制作一份优秀的简历和求职信？",
+          "如何提高自己的职业技能和竞争力？"
+      ]
+  },
+  {
+      "id": 8,
+      "title": "摄影摄像的探索",
+      "background": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/pic1.png",
+      "avatar": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/avatar2.png",
+      "roleType": "AI",
+      "nickname": "Rowan Oliver",
+      "author": "Rowan",
+      "followerCount": 4725,
+      "usedCount": 82374,
+      "isTopRated": true,
+      "contextExamples": [
+          "如何选择适合自己的相机和镜头？",
+          "如何拍摄出优美、生动、有表现力的照片和视频"
+      ]
+  },
+  {
+      "id": 9,
+      "title": "世界历史",
+      "background": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/pic2.png",
+      "avatar": "https://uxisvvycfzybtsexubwj.supabase.co/storage/v1/object/public/static/web/avatar2.png",
+      "roleType": "AI",
+      "nickname": "Soren Asher",
+      "author": "Zara",
+      "followerCount": 1252,
+      "usedCount": 5259,
+      "isTopRated": false,
+      "contextExamples": [
+          "世界历史的发展概况",
+          "未来的历史研究和教育的发展趋势是什么？"
+      ]
+  }
+]

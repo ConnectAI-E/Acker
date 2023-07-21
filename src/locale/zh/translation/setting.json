@@ -1,0 +1,22 @@
+{
+  "my info": "我的信息",
+  "api keys": "API 密钥",
+  "create at": "创建于: {{time}}",
+  "sign in": "登入",
+  "sign up": "注册",
+  "sign out": "退出登录",
+  "Confirm": "确认",
+  "Cancel": "取消",
+  "theme": "主题",
+  "Email": "邮箱",
+  "Setting": "设置",
+  "Light": "浅色",
+  "Dark": "深色",
+  "Automatic": "跟随系统",
+  "language": "语言",
+  "clear history": {
+    "name": "清除聊天记录",
+    "title": "你确定要删除所有的对话吗？",
+    "content": "一旦删除，所有的对话将被移除且不能恢复。"
+  }
+}

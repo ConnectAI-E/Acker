@@ -1,0 +1,25 @@
+{
+  "title": "ログイン",
+  "Welcome": "ようこそ",
+  "login tips": "あなたの <b>{{type}}</b> を入力して、アカウントにサインインしてください。",
+  "check tips": "{{type}}を確認してください",
+  "email sign in": "メールでログイン",
+  "code sign in": "コードでログイン",
+  "email validate": "有効なメールアドレスを入力してください",
+  "phone validate": "有効な電話番号を入力してください",
+  "login code placeholder": "ログインコード",
+  "login code validate": "ログインコードはちょうど6文字である必要があります",
+  "continue with": "または次の方法で続行",
+  "Github": "Github",
+  "sent success tips": "<b>{{value}}</b> にログインコードとログインリンクを送信しました。迷惑メールも確認してください。",
+  "login success": "ログイン成功！",
+  "email": {
+    "upper": "メール",
+    "lower": "メール"
+  },
+  "phone": {
+    "upper": "電話",
+    "lower": "電話"
+  },
+  "not login tips": "まだログインしていません、<click>ここ</click>をクリックしてログインしてください。"
+}

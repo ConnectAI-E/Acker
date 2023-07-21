@@ -1,0 +1,25 @@
+{
+  "title": "Login",
+  "Welcome": "Welcome",
+  "login tips": "Enter your <b>{{type}}</b> to sign in to your account.",
+  "check tips": "Check your {{type}}",
+  "email sign in": "Sign in with Email",
+  "code sign in": "Sign in with Code",
+  "email validate": "Please enter a valid email",
+  "phone validate": "Please enter a valid phone",
+  "login code placeholder": "Login code",
+  "login code validate": "Login code must contain exactly 6 character(s)",
+  "continue with": "OR CONTINUE WITH",
+  "Github": "Github",
+  "sent success tips": "We sent {{value}} a login code and a login link. Be sure to check your spam too.",
+  "login success": "Login successfully!",
+  "email": {
+    "upper": "Email",
+    "lower": "email"
+  },
+  "phone": {
+    "upper": "Phone",
+    "lower": "phone"
+  },
+  "not login tips": "You are not logged in yet, click <click>here</click> to log in"
+}
