@@ -76,5 +76,6 @@
   "get url error with no login": "アップロードURLを取得する前に、最初にログインする必要があります。",
   "upload error with no login": "ファイルをアップロードする前に、先にログインする必要があります。",
   "chat page info": "このウェブサイトは、<click>AIOS</click>コミュニティによってAPIとウェブページサービスが提供されています。",
-  "userid not found": "何かが間違っています、ユーザーIDが見つかりません"
+  "userid not found": "何かが間違っています、ユーザーIDが見つかりません",
+  "continue chat": "チャットを続ける"
 }

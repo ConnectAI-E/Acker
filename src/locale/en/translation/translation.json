@@ -76,5 +76,6 @@
   "get url error with no login": "You need to log in first before you can get upload url.",
   "upload error with no login": "You need to log in first before you can upload files.",
   "chat page info": " This website is provided with APIs and web services by the <click>AIOS</click> community.",
-  "userid not found": "Something is wrong, userid not found"
+  "userid not found": "Something is wrong, userid not found",
+  "continue chat": "Continue chatting"
 }

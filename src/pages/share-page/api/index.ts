@@ -9,7 +9,7 @@ function useShareChatData(userid?: string, shareid?: string) {
 
   const { data, isLoading, error } = useSWR<AxiosResponse<ChatList>, AxiosError>(url, axios.get);
 
-  return { data: data?.data || {}, isLoading, error };
+  return { data: data?.data, isLoading, error };
 }
 
 export default useShareChatData;

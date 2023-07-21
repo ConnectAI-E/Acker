@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import classNames from 'classnames';
+import { v4 as uuid } from 'uuid';
 import { useTranslation } from 'react-i18next';
 import { IconDoubleChevronLeft, IconDoubleChevronRight, IconExternalOpenStroked, IconImage } from '@douyinfe/semi-icons';
 import {
@@ -17,7 +18,7 @@ const defaultAvatar = 'https://sp-key.aios.chat/storage/v1/object/public/static/
 const ShareGroup: React.FC = function ShareGroup() {
   const { url, loading, setUrl, onTranstoCanvas } = useHtmltoCanvas<HTMLDivElement>(2000, 'chat-content');
 
-  const { chatId, chat, checkFlag } = useCurrentChat();
+  const { chat, checkFlag } = useCurrentChat();
 
   const { standardUpload, session } = useSupabase();
 
@@ -30,7 +31,8 @@ const ShareGroup: React.FC = function ShareGroup() {
   const userAvatar = session?.user?.user_metadata.avatar_url;
 
   const handleShare = useCallback(() => {
-    if (chatId && chat) {
+    const chatId = uuid();
+    if (chat) {
       const uploadJson = JSON.parse(JSON.stringify(chat));
       if (uploadJson.assistant) {
         Object.assign(uploadJson.assistant, { avatar: defaultAvatar });
@@ -68,7 +70,7 @@ const ShareGroup: React.FC = function ShareGroup() {
         setShareLoading(false);
       });
     }
-  }, [chat, chatId, userid, t, userAvatar, standardUpload]);
+  }, [chat, userid, t, userAvatar, standardUpload]);
 
   return (
     <div

@@ -7,7 +7,7 @@ import { useShareOutlet } from '../index';
 function Share() {
   const { chat, isLoading, error } = useShareOutlet();
 
-  const { data, assistant, user } = chat;
+  const { data, assistant, user } = chat || {};
 
   const renderConversationItem = useCallback((item: Conversation) => (
     <PreviewConversation
@@ -22,7 +22,12 @@ function Share() {
     <div className="w-full h-full overflow-auto">
       <Spin spinning={isLoading} wrapperClassName="!h-full" size="large">
         <div className="flex flex-col items-center text-sm">
-          {data?.length > 0 && data.map(renderConversationItem)}
+          {data?.length > 0 && (
+            <>
+              {data.map(renderConversationItem)}
+              <div className="h-[100px] bg-white dark:bg-[#15171a]" />
+            </>
+          )}
           {error && <Empty title={error.response?.data.error} description={error.response?.data?.message} />}
         </div>
       </Spin>

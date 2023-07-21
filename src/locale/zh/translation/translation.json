@@ -76,5 +76,6 @@
   "get url error with no login": "您需要先登录才能获取上传文件URL",
   "upload error with no login": "您需要先登录才能上传文件",
   "chat page info": "本网站由<click>AIOS</click>社区提供API和网页端服务",
-  "userid not found": "未知错误, 没有找到userid"
+  "userid not found": "未知错误, 没有找到userid",
+  "continue chat": "继续聊天"
 }
