@@ -13,18 +13,18 @@ import type { UploadedFile } from './FilesProps';
 import styles from './AutoTextArea.module.less';
 
 const placeholder = import.meta.env.VITE_DEFAULT_PLACEHOLDER;
-const autoTextAreaCls = 'w-full rounded-md border bg-white border-black/10 shadow-[0_0_10px_rgba(0,0,0,0.10)]';
+const autoTextAreaCls = 'w-full rounded-md border py-1 bg-white border-black/10 shadow-[0_0_10px_rgba(0,0,0,0.10)]';
 const darkAutoTextAreaCls = 'dark:border-gray-900/50 dark:text-white dark:bg-gray-700 dark:shadow-[0_0_15px_rgba(0,0,0,0.10)]';
 
 const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
   const {
-    loading, hiddenUpload, hiddenInspiration, uploadProps, onFetchAnswer 
+    loading, hiddenUpload, hiddenInspiration, uploadProps, onFetchAnswer
   } = props;
 
   const [t] = useTranslation();
 
   const [value, setValue] = useState<string>('');
-  const [height, setHeight] = useState<number>(21);
+  const [height, setHeight] = useState<number>(26);
   const [showInspire, setShowInspire] = useState<boolean>(false);
   const [isComposition, setIsComposition] = useState<boolean>(false);
   const [files, setFiles] = useState<UploadedFile[]>([]);
@@ -131,7 +131,7 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
       >
         <div
           onClick={() => setShowInspire(false)}
-          className={classNames('w-full flex items-end py-2 md:py-3 pl-2 relative', { '!pl-[32px]': !hiddenUploadBtn })}
+          className={classNames('w-full flex items-end py-3 md:py-3 pl-2 relative', { '!pl-[32px]': !hiddenUploadBtn })}
         >
           {!hiddenUploadBtn && (
             <Upload
@@ -142,12 +142,12 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
               showUploadList={false}
               onFileChange={handleFileChange}
             >
-              <Button className="absolute bottom-3 left-2 !h-[21px] max-md:bottom-2" type="tertiary" icon={<IconPlusCircle />} />
+              <Button className="absolute bottom-[5px] left-2 max-md:bottom-1" type="tertiary" icon={<IconPlusCircle className="text-xl" />} />
             </Upload>
           )}
           <textarea
             ref={textareaRef}
-            className={classNames('w-full scrollbar-hide m-0 pr-4 pl-2 text-black dark:text-white', styles.textarea)}
+            className={classNames('w-full scrollbar-hide m-0 pr-4 pl-3 text-black dark:text-white', styles.textarea)}
             style={{ maxHeight: '200px', height }}
             value={value}
             placeholder={placeholder || t('chat input placeholder')}
@@ -162,9 +162,9 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
             }}
           />
           {(loading || uploadLoading) ? <Loading /> : (
-            <div className="flex mx-2 flex-shrink-0">
-              {!hiddenInspiration && <Button className="!h-[21px]" type="tertiary" icon={<IconBolt />} onClick={handleOpenInspiration} />}
-              <Button className="!h-[21px]" type="tertiary" icon={<IconSend />} onClick={handleButtonClick} />
+            <div className="flex gap-1 mx-2 flex-shrink-0 ">
+              {!hiddenInspiration && <Button className="!h-[22px]" type="tertiary" icon={<IconBolt className="text-xl" />} onClick={handleOpenInspiration} />}
+              <Button className="!h-[22px]" type="tertiary" icon={<IconSend className="text-xl" />} onClick={handleButtonClick} />
             </div>
           )}
         </div>
