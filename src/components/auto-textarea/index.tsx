@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef, useEffect } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, Dropdown, Toast, Upload } from '@douyinfe/semi-ui';
 import { IconBolt, IconPlusCircle, IconSend } from '@douyinfe/semi-icons';
@@ -18,7 +18,7 @@ const darkAutoTextAreaCls = 'dark:border-gray-900/50 dark:text-white dark:bg-gra
 
 const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
   const {
-    loading, hiddenUpload, hiddenInspiration, uploadProps, onFetchAnswer
+    loading, hiddenUpload, hiddenInspiration, uploadProps, onFetchAnswer,
   } = props;
 
   const [t] = useTranslation();
@@ -67,6 +67,13 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
     setValue(v);
   }, []);
 
+  const inspirationRef = useRef<HTMLDivElement>(null);
+
+  const handleOpenInspiration = (e?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e?.stopPropagation();
+    setShowInspire((pre) => !pre);
+  };
+
   const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
@@ -75,30 +82,39 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
       const v = textArea?.value?.trim();
       if (v && isMobile) textArea?.blur();
       if (v) {
-        onFetchAnswer({ text: v, files: files.filter((file) => file.uploaded && file.url) });
+        onFetchAnswer({
+          text: v,
+          files: files.filter((file) => file.uploaded && file.url),
+        });
         setValue('');
         setFiles([]);
       }
+    }
+    if (e.key === 'Tab' && !e.shiftKey) {
+      e.preventDefault();
+      if (loading || isComposition) return;
+      const textArea = e.target as HTMLTextAreaElement;
+      const v = textArea?.value?.trim();
+      if (v) textArea?.blur();
+      handleOpenInspiration();
     }
   }, [files, isComposition, isMobile, loading, onFetchAnswer]);
 
   const handleButtonClick = useCallback(() => {
     if (loading || !value) return;
-    onFetchAnswer({ text: value, files: files.filter((file) => file.uploaded && file.url) });
+    onFetchAnswer({
+      text: value,
+      files: files.filter((file) => file.uploaded && file.url),
+    });
     setValue('');
     setFiles([]);
   }, [loading, onFetchAnswer, value, files]);
 
-  const handleOpenInspiration = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    e.stopPropagation();
-    setShowInspire((pre) => !pre);
-  };
-
   const handleClickInspiration = (v: string) => {
     setValue((pre) => `${pre}${v}`);
     setShowInspire(false);
+    textareaRef.current?.focus();
   };
-
   const handleFileChange = (_files: File[]) => {
     if (_files && _files.length > 0) {
       const filterSizeFiles = _files.filter((file) => {
@@ -107,7 +123,11 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
         }
         return file.size <= 52428800;
       });
-      const formatFiles = filterSizeFiles.map((file) => ({ id: uuid(), name: file.name, originFile: file }));
+      const formatFiles = filterSizeFiles.map((file) => ({
+        id: uuid(),
+        name: file.name,
+        originFile: file,
+      }));
       setFiles((pre) => pre.concat(formatFiles));
     }
   };
@@ -127,13 +147,18 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
         autoAdjustOverflow
         stopPropagation
         position="topRight"
-        content={<Inspiration onClickItem={handleClickInspiration} />}
+        content={(
+          <Inspiration
+            onClickItem={handleClickInspiration}
+            ref={inspirationRef}
+          />
+        )}
       >
         <div
           onClick={() => setShowInspire(false)}
           className={classNames('w-full flex items-end py-3 md:py-3 pl-2 relative', { '!pl-[32px]': !hiddenUploadBtn })}
         >
-          {!hiddenUploadBtn && (
+          { !hiddenUploadBtn && (
             <Upload
               action=""
               accept={accept}
@@ -142,9 +167,13 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
               showUploadList={false}
               onFileChange={handleFileChange}
             >
-              <Button className="absolute bottom-[5px] left-2 max-md:bottom-1" type="tertiary" icon={<IconPlusCircle className="text-xl" />} />
+              <Button
+                className="absolute bottom-[5px] left-2 max-md:bottom-1"
+                type="tertiary"
+                icon={<IconPlusCircle className="text-xl" />}
+              />
             </Upload>
-          )}
+          ) }
           <textarea
             ref={textareaRef}
             className={classNames('w-full scrollbar-hide m-0 pr-4 pl-3 text-black dark:text-white', styles.textarea)}
@@ -161,12 +190,25 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
               });
             }}
           />
-          {(loading || uploadLoading) ? <Loading /> : (
+          { (loading || uploadLoading) ? <Loading /> : (
             <div className="flex gap-1 mx-2 flex-shrink-0 ">
-              {!hiddenInspiration && <Button className="!h-[22px]" type="tertiary" icon={<IconBolt className="text-xl" />} onClick={handleOpenInspiration} />}
-              <Button className="!h-[22px]" type="tertiary" icon={<IconSend className="text-xl" />} onClick={handleButtonClick} />
+              { !hiddenInspiration
+                                && (
+                                  <Button
+                                    className="!h-[22px]"
+                                    type="tertiary"
+                                    icon={<IconBolt className="text-xl" />}
+                                    onClick={handleOpenInspiration}
+                                  />
+                                ) }
+              <Button
+                className="!h-[22px]"
+                type="tertiary"
+                icon={<IconSend className="text-xl" />}
+                onClick={handleButtonClick}
+              />
             </div>
-          )}
+          ) }
         </div>
       </Dropdown>
     </div>
