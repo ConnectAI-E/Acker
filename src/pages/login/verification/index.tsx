@@ -48,7 +48,7 @@ function VerificationForm() {
           trigger="blur"
           showClear
         />
-        <Button className="w-full !bg-black !text-white dark:!bg-slate-50 dark:!text-slate-900 my-5" htmlType="submit">
+        <Button size="large" className="w-full !bg-black !text-white dark:!bg-slate-50 dark:!text-slate-900 my-5" htmlType="submit">
           {t('code sign in')}
         </Button>
       </Spin>

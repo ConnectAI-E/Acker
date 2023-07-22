@@ -18,7 +18,13 @@ const darkAutoTextAreaCls = 'dark:border-gray-900/50 dark:text-white dark:bg-gra
 
 const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
   const {
-    loading, hiddenUpload, hiddenInspiration, uploadProps, onFetchAnswer,
+    loading,
+    hiddenUpload,
+    hiddenInspiration,
+    uploadProps,
+    onFetchAnswer,
+    getNextQuestion,
+    getLastQuestion,
   } = props;
 
   const [t] = useTranslation();
@@ -97,6 +103,20 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
       const v = textArea?.value?.trim();
       if (v) textArea?.blur();
       handleOpenInspiration();
+    }
+    if (e.key === 'ArrowUp' && !e.shiftKey) {
+      e.preventDefault();
+      if (loading || isComposition) return;
+      if (getLastQuestion) {
+        setValue(getLastQuestion());
+      }
+    }
+    if (e.key === 'ArrowDown' && !e.shiftKey) {
+      e.preventDefault();
+      if (loading || isComposition) return;
+      if (getNextQuestion) {
+        setValue(getNextQuestion());
+      }
     }
   }, [files, isComposition, isMobile, loading, onFetchAnswer]);
 

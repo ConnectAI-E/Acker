@@ -17,4 +17,6 @@ export interface AutoTextAreaProps {
   hiddenInspiration?: boolean;
   uploadProps?: UploadProps;
   onFetchAnswer: (value: InputProps) => void;
+  getLastQuestion?: () => any;
+  getNextQuestion?: () => any;
 }
