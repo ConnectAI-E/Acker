@@ -47,12 +47,13 @@ const ShareGroup: React.FC = function ShareGroup() {
         Notification.success({
           title: t('share.success'),
           duration: 2000,
+          style: { maxWidth: '90vw' },
           content: (
             <div className="flex flex-col">
               <Typography.Text
                 link
                 className="max-w-full w-[400px] my-3"
-                ellipsis={{ showTooltip: false, pos: 'middle' }}
+                // ellipsis={{ showTooltip: false, pos: 'middle' }}
               >
                 {shareUrl}
               </Typography.Text>
