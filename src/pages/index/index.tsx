@@ -59,10 +59,6 @@ function Home () {
       footerProps={{ input: true, onRequest: handleFetchAnswer }}
     >
       <div className="h-full flex flex-col md:items-center md:justify-center pb-20 overflow-auto bg-home-light dark:bg-home-dark">
-        <div className="text-center w-full flex-shrink-0">
-          <div className={classNames('h-24', styles.headerTitle)} />
-          <div className="text-xl h-14 text-[#6C6C6C] mt-0">{t('home title')}</div>
-        </div>
         <div className="flex justify-between items-center md:hidden px-4 mb-4">
           <Title heading={2}>{t('ai assistant')}</Title>
         </div>
