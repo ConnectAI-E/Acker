@@ -6,7 +6,7 @@ const API_HOST_LIST = {
 
 const ONLY_TEXT: string = import.meta.env.VITE_ONLY_TEXT;
 
-const HOST: string = window.location.origin || import.meta.env.VITE_HOST || 'https://plus.aios.chat';
+const HOST: string = window.location.origin || import.meta.env.VITE_HOST || 'https://acker.games';
 
 export const defaultAvatarUrl = 'https://sp-key.aios.chat/storage/v1/object/public/static/web/defaultRounded.png';
 

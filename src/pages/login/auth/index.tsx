@@ -1,9 +1,8 @@
 import { useState } from 'react';
 // import { createSearchParams, useSearchParams } from 'react-router-dom';
 // import { IconGithubLogo, IconMailStroked, IconPhoneStroke } from '@douyinfe/semi-icons';
-import { useTranslation, Trans } from 'react-i18next';
-import { Button, Divider, Form, Spin } from '@douyinfe/semi-ui';
-import { IconGithubLogo } from '@douyinfe/semi-icons';
+import { Trans, useTranslation } from 'react-i18next';
+import { Button, Form, Spin } from '@douyinfe/semi-ui';
 import { validateEmail } from '@/utils/validate';
 import { useLoginOutlet } from '..';
 
@@ -17,7 +16,7 @@ function AuthForm() {
   // const [search, setSearch] = useSearchParams();
 
   // const type = search.get('type') || 'Email';
-  
+
   // const otherName = useMemo(() => `Sign In with ${type === 'Email' ? 'phone' : 'email'}`, [type]);
 
   const type = 'Email';
@@ -47,9 +46,13 @@ function AuthForm() {
   // };
 
   return (
-    <Form key={type} className="mx-auto sm:w-[400px] w-full max-md:px-[20px]" onSubmit={handleSubmit}>
+    <Form
+      key={type}
+      className="mx-auto sm:w-[400px] w-full max-md:px-[20px]"
+      onSubmit={handleSubmit}
+    >
       <div className="text-center dark:text-white">
-        <h1 className="text-2xl font-semibold tracking-tight my-2">{t('Welcome')}</h1>
+        <h1 className="text-2xl font-semibold tracking-tight my-2">{ t('Welcome') }</h1>
         <p className="text-slate-500 dark:text-slate-400">
           <Trans
             t={t}
@@ -60,7 +63,7 @@ function AuthForm() {
         </p>
       </div>
       <Spin spinning={loading}>
-        {type === 'Email' ? (
+        { type === 'Email' ? (
           <Form.Input
             noLabel
             field="email"
@@ -90,31 +93,25 @@ function AuthForm() {
             trigger="blur"
             showClear
           />
-        )}
+        ) }
         <Button
+          size="large"
           className="w-full !bg-black !text-white dark:!bg-slate-50 dark:!text-slate-900 my-5"
           htmlType="submit"
         >
-          {t('email sign in')}
+          { t('email sign in') }
         </Button>
-        <Divider className="text-slate-600 dark:text-slate-300">
-          {t('continue with')}
-        </Divider>
-        {/* <Button
-          className="w-full mt-8 !bg-[#14c786] !text-white"
-          icon={type === 'Email' ? <IconPhoneStroke /> : <IconMailStroked />}
-          onClick={handleChangeLoginWay}
-        >
-          {otherName}
-        </Button> */}
-        <Button
-          className="w-full mt-8 !bg-[var(--semi-color-fill-0)]"
-          type="tertiary"
-          icon={<IconGithubLogo />}
-          onClick={handleGithubLogin}
-        >
-          {t('Github')}
-        </Button>
+        {/* <Divider className="text-slate-600 dark:text-slate-300"> */ }
+        {/*  {t('continue with')} */ }
+        {/* </Divider> */ }
+        {/* <Button */ }
+        {/*  className="w-full mt-8 !bg-[var(--semi-color-fill-0)]" */ }
+        {/*  type="tertiary" */ }
+        {/*  icon={<IconGithubLogo />} */ }
+        {/*  onClick={handleGithubLogin} */ }
+        {/* > */ }
+        {/*  {t('Github')} */ }
+        {/* </Button> */ }
       </Spin>
     </Form>
   );
