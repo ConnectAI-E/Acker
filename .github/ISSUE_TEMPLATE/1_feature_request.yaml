@@ -1,0 +1,33 @@
+name: Feature Request
+description: Suggest an user-story for this project
+title: '[User Story] '
+labels:
+  - 'user story'
+body:
+  - type: markdown
+    attributes:
+      value: |
+        To help us efficiently reviewing your feature request, please fill out this form.
+  - type: checkboxes
+    id: not
+    attributes:
+      label: Context
+      options:
+        - label: This issue is not a bug report. *(please use a different template for reporting a bug)*
+          required: true
+        - label: This issue is not a duplicate of an existing issue. *(please use the [search](https://github.com/connectai-e/acker/issues) to find existing issues)*
+          required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Please describe your user story.
+
+  - type: textarea
+    id: relevant information
+    attributes:
+      label: Relevant information
+      description: If applicable, please share the capture or link to the user story.
+
+
