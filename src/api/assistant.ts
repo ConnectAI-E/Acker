@@ -4,7 +4,12 @@ import type { AxiosResponse } from 'axios';
 import type { Assistant } from '@/global';
 import { mutationFetcher, axiosInstance } from './axios';
 
-const AssistantIdMap: Record<string, number> = { 'gpt-3.5-turbo': 29, 'gpt-3.5-turbo-16k': 28, 'gpt-4': 30, };
+const AssistantIdMap: Record<string, number> = {
+  'gpt-3.5-turbo': 29,
+  'gpt-3.5-turbo-16k': 28,
+  'gpt-4': 30,
+  midjourney: 27,
+};
 
 /**
  * 上传单个assistant

@@ -16,14 +16,18 @@ import { defaultAssistant, defaultMidjourneyAssistant } from '@/assets/contants/
 import type { AiEditProps } from './AiEdit';
 
 const AiEdit: React.FC<AiEditProps> = function AiEdit(props) {
-  const { assistant, disabled, model: editModel, onConfirm } = props;
+  const { assistant, disabled, onConfirm } = props;
 
   const [t] = useTranslation('assistantSetting');
 
   const { prompt, avatar, model } = assistant || {};
 
   const changeFlag: boolean = !!assistant?.id;
-  const midjourneyFlag: boolean = editModel === 'midjourney';
+  
+  /**
+   * @deprecated
+   */
+  const midjourneyFlag: boolean = model === 'midjourney';
 
   const [smList, setSmList] = useState<Message[]>(() => prompt || []);
   const [avatarUrl, setAvatarUrl] = useState<string>(avatar || '');

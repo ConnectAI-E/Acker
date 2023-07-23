@@ -77,5 +77,8 @@
   "upload error with no login": "You need to log in first before you can upload files.",
   "chat page info": " This website is provided with APIs and web services by the <click>AIOS</click> community.",
   "userid not found": "Something is wrong, userid not found",
-  "continue chat": "Continue chatting"
+  "continue chat": "Continue chatting",
+  "The image is being generated, please wait.": "The image is being generated, please wait.",
+  "Something is wrong, please try again.": "Something is wrong, please try again.",
+  "This request has been terminated.": "This request has been terminated."
 }

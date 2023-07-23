@@ -1,8 +1,16 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { useSWRConfig } from 'swr';
 import { useTranslation } from 'react-i18next';
 import {
-  Button, Input, Empty, SideSheet, Toast, List, Modal, Skeleton, Typography, Spin
+  Button,
+  Input,
+  Empty,
+  SideSheet,
+  Toast,
+  List,
+  Skeleton,
+  Typography,
+  Spin
 } from '@douyinfe/semi-ui';
 import { IconSearch } from '@douyinfe/semi-icons';
 import type { Assistant, ChatList } from '@/global';
@@ -18,18 +26,14 @@ import {
   useUploadAssistant,
 } from '@/api/assistant';
 import AiEdit from './components/ai-edit';
-import AiPick from './components/ai-pick';
 
 function User() {
   const [t] = useTranslation();
 
   const [curAssistant, setCurAssistant] = useState<Assistant>();
-  const [model, setModel] = useState<string>('');
   const [searchValue, setSearchValue] = useState<string>('');
   const [visible, setVisible] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
-
-  const aiPickRef = useRef<any>();
 
   const { handleNewChat, setChatList } = useChatList();
 
@@ -54,21 +58,9 @@ function User() {
     setVisible(false);
   };
 
-  const handleModelClick = (_model: string) => {
+  const handleCreate = () => {
     setCurAssistant(undefined);
     setVisible(true);
-    setModel(_model);
-    aiPickRef.current?.destroy();
-  };
-
-  const handleCreate = () => {
-    aiPickRef.current = Modal.info({
-      header: null,
-      icon: null,
-      footer: null,
-      style: { maxWidth: '100%' },
-      content: <AiPick onClick={handleModelClick} />
-    });
   };
 
   const handleConfirm = async (assistant: Assistant, changeFlag?: boolean) => {
@@ -107,7 +99,6 @@ function User() {
 
   const handleEdit = (assistant: Assistant) => {
     setCurAssistant(assistant);
-    setModel(assistant.model);
     setVisible(true);
   };
 
@@ -203,7 +194,6 @@ function User() {
         getPopupContainer={() => document.querySelector('.layout-root') as HTMLElement}
       >
         <AiEdit
-          model={model}
           disabled={curAssistant?.source === 'system'}
           assistant={curAssistant}
           onConfirm={handleConfirm}

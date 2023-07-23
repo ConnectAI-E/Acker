@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useMemo, useCallback } from 'react';
 import { v4 as uuid } from 'uuid';
 import { useTranslation } from 'react-i18next';
 import { Toast } from '@douyinfe/semi-ui';
@@ -24,7 +24,7 @@ const MidJourneyChat: React.FC = function MidJourneyChat() {
 
   const { handleChange, handleChatValueChange } = useChatList();
 
-  const { session } = useSupabase();
+  const { session, apiKeys } = useSupabase();
 
   const { data: chatData } = chat || {};
 
@@ -39,6 +39,10 @@ const MidJourneyChat: React.FC = function MidJourneyChat() {
 
   const conversationRef = useRef<Conversation[]>();
   const abortRef = useRef<boolean>(false);
+
+  const apiKey = useMemo(() => (apiKeys && apiKeys.length > 0 ? apiKeys[0].api_key : ''), [apiKeys]);
+
+  const isLoading = imageLoading || isMutating || loading;
 
   const handleChatChange = (_data: MidJourneyData | null, finish?: boolean) => {
     const { state, img_url: imgUrl } = _data || {};
@@ -56,14 +60,14 @@ const MidJourneyChat: React.FC = function MidJourneyChat() {
     handleChange(chatId, pre);
   };
 
-  const handleError = (message: string) => {
+  const handleError = useCallback((message: string) => {
     const pre = [...(conversationRef.current || [])];
     const [lastConversation] = pre.slice(-1);
     Object.assign(lastConversation, { error: true, stop: true, value: message, type: 'text' });
     setConversation(pre);
     setLoading(false);
     handleChange(chatId, pre);
-  };
+  }, [chatId, handleChange]);
 
   const handlePollingImage = async ({ id, host, key }: Record<string, any>) => {
     if (abortRef.current) {
@@ -94,7 +98,7 @@ const MidJourneyChat: React.FC = function MidJourneyChat() {
 
   const handleFetch = async (value: string, params: Record<string, any> = {}) => {
     if (imageLoading || isMutating || loading || !assistant || !value) return;
-    const { configuration: { host, apiKey } } = assistant || { configuration: {} };
+    const { configuration: { host, apiKey: configApiKey } } = assistant || { configuration: {} };
     if (!host) {
       Toast.warning(t('host not fuound'));
       return;
@@ -106,7 +110,7 @@ const MidJourneyChat: React.FC = function MidJourneyChat() {
         character: 'user', value, key: uuid(), error: false, conversationId, files: params?.files || [],
       },
       {
-        character: 'bot', value: 'The image is being generated, please wait.', key: uuid(), error: false, conversationId
+        character: 'bot', value: t('The image is being generated, please wait.'), key: uuid(), error: false, conversationId
       }
     ];
     setConversation(conversationRef.current);
@@ -119,7 +123,7 @@ const MidJourneyChat: React.FC = function MidJourneyChat() {
       const imgs = files?.map((file: UploadedFile) => file.url);
       const res = await imageTrigger({
         host,
-        key: apiKey,
+        key: configApiKey || apiKey,
         prompt: promptFlag ? value : '',
         imgs,
         ...rest
@@ -129,9 +133,9 @@ const MidJourneyChat: React.FC = function MidJourneyChat() {
       } else {
         const { id } = res?.data.data || {};
         if (id === 0) {
-          handleError('Something is wrong, please try again');
+          handleError(t('Something is wrong, please try again.'));
         } else {
-          await handlePollingImage({ id, host, key: apiKey });
+          await handlePollingImage({ id, host, key: configApiKey || apiKey });
         }
       }
     } catch (err) {
@@ -145,10 +149,10 @@ const MidJourneyChat: React.FC = function MidJourneyChat() {
     handleFetch(text, { files }).catch(() => {});
   };
 
-  const handleStop = () => { 
-    handleError('This request has been terminated.');
+  const handleStop = useCallback(() => { 
+    handleError(t('This request has been terminated.'));
     abortRef.current = true;
-  };
+  }, [handleError, t]);
 
   const afterOptionsFinish = (data: Conversation, component: Component) => {
     const { character, key } = data;
@@ -181,7 +185,7 @@ const MidJourneyChat: React.FC = function MidJourneyChat() {
                 botAvatar={assistant?.avatar}
                 userAvatar={session?.user?.user_metadata.avatar_url}
                 question={data.character === 'bot' ? arr[index - 1].value : ''}
-                isLoading={imageLoading || isMutating || loading}
+                isLoading={isLoading}
                 onFetch={handleFetch}
                 afterOptionsFinish={afterOptionsFinish}
               />
@@ -201,7 +205,7 @@ const MidJourneyChat: React.FC = function MidJourneyChat() {
         )}
         <div className="mx-2 flex flex-row last:mb-2 md:last:mb-6 lg:mx-auto lg:max-w-3xl pt-3">
           <AutoTextArea
-            loading={imageLoading || isMutating || loading || assistantLoading}
+            loading={isLoading || assistantLoading}
             onFetchAnswer={handleTextArea}
             uploadProps={{ accept: 'image/*', multiple: true }}
             hiddenInspiration

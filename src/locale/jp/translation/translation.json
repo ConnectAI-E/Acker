@@ -77,5 +77,8 @@
   "upload error with no login": "ファイルをアップロードする前に、先にログインする必要があります。",
   "chat page info": "このウェブサイトは、<click>AIOS</click>コミュニティによってAPIとウェブページサービスが提供されています。",
   "userid not found": "何かが間違っています、ユーザーIDが見つかりません",
-  "continue chat": "チャットを続ける"
+  "continue chat": "チャットを続ける",
+  "The image is being generated, please wait.": "画像を生成中です、お待ちください...",
+  "Something is wrong, please try again.": "問題が発生しました、再度お試しください。",
+  "This request has been terminated.": "このリクエストは中断されました。"
 }

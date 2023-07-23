@@ -26,19 +26,17 @@ const MJConversation: React.FC<MJConversationProps> = function MJConversation(pr
   useEffect(() => {
     const getImageUrls = async () => {
       if (files) {
-        const urls = await Promise.all(
-          files.map(async (file) => new Promise((resolve) => {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-              resolve(reader.result);
-            };
-            if (file.originFile instanceof File) {
-              reader.readAsDataURL(file.originFile);
-            } else {
-              resolve(file.url);
-            }
-          }))
-        );
+        const urls = await Promise.all(files.map(async (file) => new Promise((resolve) => {
+          const reader = new FileReader();
+          reader.onloadend = () => {
+            resolve(reader.result);
+          };
+          if (file.originFile instanceof File) {
+            reader.readAsDataURL(file.originFile);
+          } else {
+            resolve(file.url);
+          }
+        })));
         setImageUrls(urls as string[]);
       }
     };
@@ -120,12 +118,12 @@ const MJConversation: React.FC<MJConversationProps> = function MJConversation(pr
               'whitespace-pre-line': character === 'user'
             })}
           >
+            {character === 'user' ? value : renderBotResponse(value)}
             {Array.isArray(imageUrls) && imageUrls.length > 0 && (
-              <div className="w-full flex mb-2">
+              <div className="w-full flex mt-2">
                 {imageUrls.map(renderUserImage)}
               </div>
             )}
-            {character === 'user' ? value : renderBotResponse(value)}
             {character !== 'user' && type === 'image' && progress && progress !== 'Done' && renderProgress(progress)}
             {character === 'bot' && type === 'image' && progress === 'Done' && Array.isArray(components) && (
               <div className="w-full flex flex-wrap">

@@ -10,6 +10,7 @@ function usePreload() {
 
   useEffect(() => {
     if (session) {
+      preload('/assistant/27', axiosInstance.get).catch(() => {});
       preload('/assistant/28', axiosInstance.get).catch(() => {});
       preload('/assistant/29', axiosInstance.get).catch(() => {});
       preload('/assistant/30', axiosInstance.get).catch(() => {});
