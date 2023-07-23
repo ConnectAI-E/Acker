@@ -3,10 +3,10 @@ import { IconUserStroked } from '@douyinfe/semi-icons';
 import { Icon } from '@douyinfe/semi-ui';
 import { useNavigate } from 'react-router-dom';
 import SquareIcon from '@/components/square-icon';
-import Repo from '@/assets/svg/repo.svg';
+import Action from '@/assets/svg/action.svg';
 import Logo from '@/assets/svg/logo.svg';
+import All from '@/assets/svg/all.svg';
 import Hot from '@/assets/svg/hot.svg';
-import Fight from '@/assets/svg/fight.svg';
 
 const SiderConfig: React.FC = function SiderConfig() {
   const navigate = useNavigate();
@@ -23,19 +23,19 @@ const SiderConfig: React.FC = function SiderConfig() {
       />
       <div className="h-0 flex-grow flex flex-col items-center justify-center">
         <SquareIcon
-          icon={<Repo />}
+          icon={<Action />}
           onClick={() => navigate('/chat')}
           wrapperClass="my-[6px]"
           checked={window.location.pathname.includes('chat')}
         />
         <SquareIcon
-          icon={<Fight />}
+          icon={<Hot />}
           onClick={() => navigate('/explore')}
           wrapperClass="my-[6px]"
           checked={window.location.pathname.includes('explore')}
         />
         <SquareIcon
-          icon={<Hot />}
+          icon={<All />}
           onClick={() => navigate('/user')}
           wrapperClass="my-[6px]"
           checked={window.location.pathname.includes('user')}

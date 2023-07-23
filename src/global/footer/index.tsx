@@ -6,6 +6,8 @@ import { IconUserStroked } from '@douyinfe/semi-icons';
 import AutoTextArea from '@/components/auto-textarea';
 import useResponsiveMobile from '@/hooks/useResponsiveMobile';
 import Hot from '@/assets/svg/hot.svg';
+import Action from '@/assets/svg/action.svg';
+import All from '@/assets/svg/all.svg';
 import FooterItem from './FooterItem';
 import { FooterProps } from './FooterProps';
 
@@ -42,8 +44,8 @@ const Footer: React.FC<FooterProps> = function Footer(props) {
       )}
       <div className="w-full h-[5rem] flex items-center">
         <FooterItem
-          icon={<Hot />}
-          text={t('Chat')}
+          icon={<Action />}
+          text={t('chat')}
           onClick={() => handleNavigate('/chat-mobile')}
           checked={window.location.pathname.includes('chat')}
         />
@@ -54,8 +56,8 @@ const Footer: React.FC<FooterProps> = function Footer(props) {
           checked={window.location.pathname.includes('explore')}
         />
         <FooterItem
-          icon={<Hot />}
-          text={t('My AI')}
+          icon={<All />}
+          text={t('Action')}
           onClick={() => handleNavigate('/user')}
           checked={window.location.pathname.includes('user')}
         />

@@ -4,7 +4,7 @@ import ErrorBoundary from '@/components/error-boundary';
 
 const MidJourneyChatCom = lazy(async () => import('./MidJourneyChat').catch(() => ({ default: () => <ErrorBoundary /> })));
 
-const Chat: React.FC = function ChatIcon() {
+const Action: React.FC = function ChatIcon() {
   return (
     <Suspense fallback={<Fallback />}>
       <MidJourneyChatCom />
@@ -12,4 +12,4 @@ const Chat: React.FC = function ChatIcon() {
   );
 };
 
-export default Chat;
+export default Action;
