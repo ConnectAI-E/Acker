@@ -13,7 +13,7 @@
 <tr>
 <td>
 <a href="#banner">
-  <img align="left" src="https://github.com/ConnectAI-E/acker/assets/50035229/a00b3fa8-881a-4221-820d-4784d98a421e" height='180px'">
+  <img align="left" src="https://github.com/ConnectAI-E/acker/assets/50035229/a00b3fa8-881a-4221-820d-4784d98a421e" height='230px'">
 </a>
 <h4>What is Acker up to?</h3>
 <ul>
