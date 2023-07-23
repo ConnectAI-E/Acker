@@ -170,7 +170,6 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
         content={(
           <Inspiration
             onClickItem={handleClickInspiration}
-            ref={inspirationRef}
           />
         )}
       >

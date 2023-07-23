@@ -1,4 +1,5 @@
-import React, { RefObject, useEffect, useRef, useState } from 'react';
+import { RefObject, useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { List } from '@douyinfe/semi-ui';
 import classNames from 'classnames';
 import { PromptItem } from '@/components/auto-textarea/InspirationProps';
@@ -17,6 +18,8 @@ function PromptList(props: PromptListProps) {
   } = props;
   const [hoverIndex, setHi] = useState(-1);
   const i = useRef(0);
+
+  const [t] = useTranslation();
 
   const changeIndex = (offset: number) => {
     const currentIndex = i.current;
@@ -69,6 +72,7 @@ function PromptList(props: PromptListProps) {
     return () => {
       window.removeEventListener('keydown', keydownHandler);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ifActive]);
   const selectedRef = useRef(null) as RefObject<HTMLDivElement>;
   // Function to scroll the parent container to the selected item
@@ -95,7 +99,7 @@ function PromptList(props: PromptListProps) {
           <div
             className="h-full"
           >
-            { errorMsg || 'No data' }
+            { errorMsg || t('no data.title') }
           </div>
         )}
         renderItem={(item, index) => (

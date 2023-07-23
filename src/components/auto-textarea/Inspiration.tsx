@@ -1,30 +1,30 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Input, Spin, Tabs } from '@douyinfe/semi-ui';
 import { IconSearch } from '@douyinfe/semi-icons';
 import { useEnPrompt, useZhPrompt } from './api';
-import useLocalStorageState from '@/hooks/useLocalStorageState';
-import type { InspirationProps, PromptItem } from './InspirationProps';
 import PromptList from '@/components/auto-textarea/PromptList';
+import useLocalStorageState from '@/hooks/useLocalStorageState';
+import useIsMobile from '@/hooks/useIsMobile';
+import type { InspirationProps, PromptItem } from './InspirationProps';
 
-const Inspiration: React.ForwardRefRenderFunction<any, InspirationProps> = function Inspiration(props, ref) {
+const Inspiration: React.FC<InspirationProps> = function Inspiration(props) {
   const { onClickItem } = props;
+
+  const { i18n } = useTranslation();
 
   const [zhPrompt] = useLocalStorageState<PromptItem[]>('zhPrompt');
   const [enPrompt] = useLocalStorageState<PromptItem[]>('enPrompt');
 
-  const {
-    data: onlineZhPrompt,
-    isLoading: onlineZhLoading,
-    error: zhError,
-  } = useZhPrompt(!zhPrompt);
+  const { data: onlineZhPrompt, isLoading: onlineZhLoading, error: zhError } = useZhPrompt(!zhPrompt);
 
-  const {
-    data: onlineEnPrompt,
-    isLoading: onlineEnLoading,
-    error: enError,
-  } = useEnPrompt(!enPrompt);
+  const { data: onlineEnPrompt, isLoading: onlineEnLoading, error: enError } = useEnPrompt(!enPrompt);
 
   const [searchValue, setSearchValue] = useState('');
+
+  const [activeTab, changeTabKey] = useState(['zh', 'en'].includes(i18n.language) ? i18n.language : 'en');
+
+  const isMobile = useIsMobile();
 
   const zh = (zhPrompt || onlineZhPrompt).filter((item) => item?.label?.includes(searchValue));
   const en = (enPrompt || onlineEnPrompt).filter((item) => item?.label?.includes(searchValue));
@@ -48,7 +48,6 @@ const Inspiration: React.ForwardRefRenderFunction<any, InspirationProps> = funct
     }
   }, [onlineEnPrompt, onlineEnLoading]);
 
-  const [activeTab, changeTabKey] = useState('zh');
   const checkNextTab = useCallback(
     () => {
       if (activeTab === 'zh') {
@@ -63,18 +62,18 @@ const Inspiration: React.ForwardRefRenderFunction<any, InspirationProps> = funct
   return (
     <div className="w-[500px] h-[500px] max-w-[calc(100vw)]">
       <Tabs
-        className="h-full flex flex-col"
-        tabBarClassName="px-4 flex-shrink-0"
         activeKey={activeTab}
         onChange={
           (key) => {
             changeTabKey(key);
           }
         }
+        className="h-full flex flex-col"
+        tabBarClassName="px-4 flex-shrink-0"
         contentStyle={{ height: 0, flexGrow: 1 }}
         tabBarExtraContent={(
           <Input
-            autofocus
+            autofocus={!isMobile} // 移动端不需要autofocus
             style={{ minWidth: '240px' }}
             prefix={<IconSearch />}
             value={searchValue}
@@ -83,14 +82,9 @@ const Inspiration: React.ForwardRefRenderFunction<any, InspirationProps> = funct
           />
         )}
       >
-        { data.map((d) => (
-          <Tabs.TabPane
-            key={d.name}
-            itemKey={d.name}
-            tab={d.name}
-            className="h-full overflow-auto"
-          >
-            { d.loading ? <Spin wrapperClassName="w-full h-[200px]" /> : (
+        {data.map((d) => (
+          <Tabs.TabPane key={d.name} itemKey={d.name} tab={d.name} className="h-full overflow-auto">
+            {d.loading ? <Spin wrapperClassName="w-full h-[200px]" /> : (
               <PromptList
                 onChangeNextTab={checkNextTab}
                 ifActive={activeTab === d.name}
@@ -98,12 +92,12 @@ const Inspiration: React.ForwardRefRenderFunction<any, InspirationProps> = funct
                 onClickItem={onClickItem}
                 errorMsg={d.error}
               />
-            ) }
+            )}
           </Tabs.TabPane>
-        )) }
+        ))}
       </Tabs>
     </div>
   );
 };
 
-export default React.forwardRef(Inspiration);
+export default Inspiration;
