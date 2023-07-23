@@ -15,8 +15,9 @@
 </a>
 <h4>What is Acker up to?</h3>
 <ul>
-    <li>😀 Awesome chat experience, similar to using a terminal, with support for numerous amazing actions.</li>
-    <li>🤞 Enabling users to do everything through chat! Such as `Login`, `Blog`, and `Manage Profile`, among others.</li>
+    <li>😀 Awesome chat experience, similar to using a terminal</li>
+    <li>🪖 Support numerous amazing actions by cmdk</li>
+    <li>🤞 Enabling users to do everything through chat! Such as `Login`, `Blog`, among others.</li>
     <li>🥡 Treating QA as a first-class role.</li>
     <li>❤️ Assisting AI-Hackers in easily gaining support from sponsors.</li>
 </ul>
