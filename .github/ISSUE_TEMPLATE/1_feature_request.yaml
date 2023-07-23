@@ -19,6 +19,7 @@ body:
           required: true
 
   - type: textarea
+    required: true
     id: description
     attributes:
       label: Description
