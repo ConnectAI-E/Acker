@@ -7,6 +7,8 @@
 ```
 
 
+<p id="banner" align="center">
+
 <table>
 <tr>
 <td>
@@ -25,6 +27,7 @@
 </td>
 </tr>
 </table>
+</p>
 
                                         
 # 🥷 Glossary
