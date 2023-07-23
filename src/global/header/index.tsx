@@ -35,7 +35,7 @@ const Header: React.FC<HeaderProps> = function Header(props) {
         className="w-full flex justify-center font-medium text-[18px] text-overflow-l1"
         onClick={onTitleClick}
       >
-        {title || 'AIOS.CHAT'}
+        {title || 'Acker'}
       </div>
       {rightIcon && <div className={classNames(iconClass, 'right-0')} onClick={onRightClick}>{rightIcon}</div>}
     </div>
