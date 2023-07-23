@@ -50,9 +50,11 @@ function parseStreamText(data: string) {
         if (delta.role) result.role = delta.role;
         if (delta.content) result.content = `${result.content}${delta.content}`;
       }
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.error((error));
+    } catch {
+      /**
+       *  一般这里为JSON.parse(jsonStr)出了问题，stream长度好像被截断了导致内容不全
+       *  此时的l为 data: {"id":"chatcmpl-7fQrX5   内容不全。
+       */
     }
   });
 

@@ -88,7 +88,7 @@ const ChatItem: React.FC<ChatItemProps> = function ChatItem({ chat }) {
           </Popconfirm>
         </div>
         <div className="w-full text-overflow-l1 text-[12px] opacity-50">
-          { chat.data[chat.data.length - 1]?.value || `[${t('empty chat')}]` }
+          {chat.data[chat.data.length - (assistant?.model === 'midjourney' ? 2 : 1)]?.value || `[${t('empty chat')}]`}
         </div>
       </div>
     </div>
