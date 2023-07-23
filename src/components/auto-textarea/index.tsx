@@ -13,8 +13,8 @@ import type { UploadedFile } from './FilesProps';
 import styles from './AutoTextArea.module.less';
 
 const placeholder = import.meta.env.VITE_DEFAULT_PLACEHOLDER;
-const autoTextAreaCls = 'w-full rounded-md border py-1 bg-white border-black/10 shadow-[0_0_10px_rgba(0,0,0,0.10)]';
-const darkAutoTextAreaCls = 'dark:border-gray-900/50 dark:text-white dark:bg-gray-700 dark:shadow-[0_0_15px_rgba(0,0,0,0.10)]';
+const autoTextAreaCls = 'w-full rounded-xl border py-2 bg-white border-black/10';
+const darkAutoTextAreaCls = 'dark:border-gray-900/50 dark:text-white dark:bg-gray-700 dark:shadow-lg dark:shadow-gray-900/20';
 
 const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
   const {
@@ -156,7 +156,7 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
   const hiddenUploadBtn = hiddenUpload || (!multiple && files.length === 1);
 
   return (
-    <div className={classNames(autoTextAreaCls, darkAutoTextAreaCls)}>
+    <div className={classNames(styles.boxShadow, autoTextAreaCls, darkAutoTextAreaCls,)}>
       <Files data={files} onChange={setFiles} />
       <Dropdown
         trigger="custom"
