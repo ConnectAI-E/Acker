@@ -14,7 +14,7 @@ interface EditorProps {
   onCancel: () => void;
 }
 
-const mdeOptions: Options = { hideIcons: ['fullscreen', 'guide'], autofocus: true };
+const mdeOptions: Options = { hideIcons: ['side-by-side', 'fullscreen', 'guide'], autofocus: true };
 
 const MyEditor: React.FC<EditorProps> = function MyEditor(props) {
   const { value, onSave, onCancel } = props;
