@@ -53,6 +53,22 @@
       }
     }
 
+    .editor-toolbar {
+      &.fullscreen {
+        z-index: 1021;
+        min-height: 50px;
+      }
+    }
+
+    .EasyMDEContainer {
+      .CodeMirror-fullscreen {
+        z-index: 1021;
+      }
+      .editor-preview-side {
+        z-index: 1021;
+      }
+    }
+
     @media screen and (max-width: 1000px) {
       .editor-statusbar {
         display: none;

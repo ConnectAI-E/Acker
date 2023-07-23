@@ -7,6 +7,7 @@ import type { Options } from 'easymde';
 import useResponsiveMobile from '@/hooks/useResponsiveMobile';
 import styles from '../Conversation.module.less';
 import 'easymde/dist/easymde.min.css';
+import '../editor.css';
 
 interface EditorProps {
   value: string;
@@ -14,7 +15,7 @@ interface EditorProps {
   onCancel: () => void;
 }
 
-const mdeOptions: Options = { hideIcons: ['side-by-side', 'fullscreen', 'guide'], autofocus: true };
+const mdeOptions: Options = { hideIcons: ['guide'], autofocus: true };
 
 const MyEditor: React.FC<EditorProps> = function MyEditor(props) {
   const { value, onSave, onCancel } = props;
@@ -33,20 +34,6 @@ const MyEditor: React.FC<EditorProps> = function MyEditor(props) {
     };
   }, [onCancel]);
 
-  useEffect(() => {
-    const closeEditorWithEsc = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        onCancel();
-      }
-    };
-
-    document.addEventListener('keyup', closeEditorWithEsc);
-
-    return () => {
-      document.removeEventListener('keyup', closeEditorWithEsc);
-    };
-  }, [onCancel]);
-
   const onChange = useCallback((_value: string) => {
     setMarkdownValue(_value);
   }, []);
@@ -55,6 +42,20 @@ const MyEditor: React.FC<EditorProps> = function MyEditor(props) {
     setMarkdownValue(value);
   };
 
+  const handleMdeKeyDown = useCallback((event: React.KeyboardEvent<HTMLDivElement>) => {
+    if ((event.metaKey || event.ctrlKey) && event.key?.toLocaleLowerCase() === 's') {
+      event.preventDefault();
+      onSave(markdownValue);
+    }
+    if (event.key === 'Escape') {
+      onCancel();
+    }
+    if ((event.metaKey || event.ctrlKey) && event.key.toLocaleLowerCase() === 'r') {
+      event.preventDefault();
+      setMarkdownValue(value);
+    }
+  }, [markdownValue, onCancel, onSave, value]);
+
   return (
     <div className="w-full relative" onClick={(e) => e.stopPropagation()}>
       <SimpleMdeReact
@@ -62,6 +63,7 @@ const MyEditor: React.FC<EditorProps> = function MyEditor(props) {
         options={mdeOptions}
         value={markdownValue}
         onChange={onChange}
+        onKeyDown={handleMdeKeyDown}
       />
       <div className={classNames('absolute right-0 -bottom-[20px] z-10 ', { 'w-full !static justify-end  pt-2': isMobile })}>
         <button
