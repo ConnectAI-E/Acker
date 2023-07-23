@@ -7,6 +7,24 @@
 ```
 
 
+<table>
+<tr>
+<td>
+<a href="#banner">
+  <img align="left" src="https://github.com/ConnectAI-E/acker/assets/50035229/a00b3fa8-881a-4221-820d-4784d98a421e" height='180px'">
+</a>
+<h4>What is Acker up to?</h3>
+<ul>
+    <li>😀 Awesome chat experience, similar to using a terminal, with support for numerous amazing actions.</li>
+    <li>🤞 Enabling users to do everything through chat! Such as `Login`, `Blog`, and `Manage Profile`, among others.</li>
+    <li>🥡 Treating QA as a first-class role.</li>
+    <li>❤️ Assisting AI-Hackers in easily gaining support from sponsors.</li>
+</ul>
+<img width="1000" height="0">
+</td>
+</tr>
+</table>
+
                                         
 # 🥷 Glossary
 
