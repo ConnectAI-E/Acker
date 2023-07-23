@@ -14,7 +14,7 @@ interface EditorProps {
   onCancel: () => void;
 }
 
-const mdeOptions: Options = { hideIcons: ['side-by-side', 'fullscreen', 'guide'], autofocus: true };
+const mdeOptions: Options = { hideIcons: ['fullscreen', 'guide'], autofocus: true };
 
 const MyEditor: React.FC<EditorProps> = function MyEditor(props) {
   const { value, onSave, onCancel } = props;
@@ -22,7 +22,7 @@ const MyEditor: React.FC<EditorProps> = function MyEditor(props) {
   const [t] = useTranslation();
 
   const [markdownValue, setMarkdownValue] = useState(value);
-  
+
   const isMobile = useResponsiveMobile(1000);
 
   useEffect(() => {
@@ -63,31 +63,24 @@ const MyEditor: React.FC<EditorProps> = function MyEditor(props) {
         value={markdownValue}
         onChange={onChange}
       />
-      <ButtonGroup className={classNames('absolute right-0 -bottom-[4px] z-10', { 'w-full !static justify-end': isMobile })}>
-        <Button
-          className={classNames('w-[90px]', { '!w-0 flex-1': isMobile })}
-          theme="solid"
+      <div className={classNames('absolute right-0 -bottom-[20px] z-10 ', { 'w-full !static justify-end  pt-2': isMobile })}>
+        <button
           onClick={() => onSave(markdownValue)}
+          type="button"
+          className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl  focus:outline-none   font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-4 mb-2"
         >
           {t('Save')}
-        </Button>
-        <Button
-          className={classNames('w-[90px] !bg-[var(--semi-color-secondary)]', { '!w-0 flex-1': isMobile })}
-          type="secondary"
-          theme="solid"
-          onClick={handleReset}
-        >
-          {t('Reset')}
-        </Button>
-        <Button
-          className={classNames('w-[90px] !bg-[var(--semi-color-tertiary)]', { '!w-0 flex-1': isMobile })}
-          type="tertiary"
-          theme="solid"
+        </button>
+
+        <button
           onClick={onCancel}
+          type="button"
+          className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
         >
           {t('Cancel')}
-        </Button>
-      </ButtonGroup>
+        </button>
+
+      </div>
     </div>
   );
 };
