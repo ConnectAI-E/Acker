@@ -25,7 +25,7 @@ body:
       description: Please describe your user story.
 
   - type: textarea
-    id: relevant information
+    id: relevantInformation
     attributes:
       label: Relevant information
       description: If applicable, please share the capture or link to the user story.
