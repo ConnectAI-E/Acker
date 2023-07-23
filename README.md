@@ -15,7 +15,7 @@
 <a href="#banner">
   <img align="left" src="https://github.com/ConnectAI-E/acker/assets/50035229/a00b3fa8-881a-4221-820d-4784d98a421e" height='230px'">
 </a>
-<h4>What is Acker up to?</h3>
+<h3><b>What is Acker up to ?</b></h3>
 <ul>
     <li>😀 Awesome chat experience, similar to using a terminal</li>
     <li>🪖 Support numerous amazing actions by cmdk</li>
