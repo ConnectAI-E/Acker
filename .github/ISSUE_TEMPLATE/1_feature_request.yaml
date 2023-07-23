@@ -19,7 +19,8 @@ body:
           required: true
 
   - type: textarea
-    required: true
+    validations:
+      required: true
     id: description
     attributes:
       label: Description
