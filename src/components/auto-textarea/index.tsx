@@ -104,14 +104,14 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
       if (v) textArea?.blur();
       handleOpenInspiration();
     }
-    if (e.key === 'ArrowUp' && !e.shiftKey) {
+    if (e.key === 'ArrowUp' && e.shiftKey) {
       e.preventDefault();
       if (loading || isComposition) return;
       if (getLastQuestion) {
         setValue(getLastQuestion());
       }
     }
-    if (e.key === 'ArrowDown' && !e.shiftKey) {
+    if (e.key === 'ArrowDown' && e.shiftKey) {
       e.preventDefault();
       if (loading || isComposition) return;
       if (getNextQuestion) {
