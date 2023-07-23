@@ -1,23 +1,26 @@
 /* eslint-disable no-console */
-import React, { useRef, useState, useMemo, useCallback } from 'react';
+import React, {
+  useRef, useState, useMemo, useCallback, useEffect 
+} from 'react';
 import { v4 as uuid } from 'uuid';
 import { useTranslation } from 'react-i18next';
 import { Toast } from '@douyinfe/semi-ui';
 import { PhotoProvider } from 'react-photo-view';
 import { IconPause } from '@douyinfe/semi-icons';
+import type { AxiosError } from 'axios';
 import AutoTextArea from '@/components/auto-textarea';
 import ProjectSourceInfo from '@/components/project-source-info';
 import { getCurrentDate } from '@/utils';
 import type { Conversation } from '@/global';
 import type { InputProps } from '@/components/auto-textarea/AutoTextArea';
 import type { UploadedFile } from '@/components/auto-textarea/FilesProps';
+import useSupabase from '@/hooks/useSupabase';
+import useCurrentChat from '@/hooks/useCurrentChat';
+import useChatList from '@/hooks/useChatList';
 import { useMidjourney, usePollingMidjourney } from './api';
 import type { Component, MidJourneyData, MidJourneyResponse } from './MidJourneyChatProps';
 import MJConversation from './MJConversation';
 import renderToolbar from './Toolbar';
-import useSupabase from '@/hooks/useSupabase';
-import useCurrentChat from '@/hooks/useCurrentChat';
-import useChatList from '@/hooks/useChatList';
 
 const MidJourneyChat: React.FC = function MidJourneyChat() {
   const { chat, assistant, assistantLoading, chatId } = useCurrentChat();
@@ -45,7 +48,8 @@ const MidJourneyChat: React.FC = function MidJourneyChat() {
   const isLoading = imageLoading || isMutating || loading;
 
   const handleChatChange = (_data: MidJourneyData | null, finish?: boolean) => {
-    const { state, img_url: imgUrl } = _data || {};
+    if (!_data) return;
+    const { state, img_url: imgUrl } = _data;
     const pre = [...(conversationRef.current || [])];
     const [lastConversation] = pre.slice(-1);
     Object.assign(lastConversation, {
@@ -84,7 +88,10 @@ const MidJourneyChat: React.FC = function MidJourneyChat() {
         if (data?.state !== 'Done') {
           handleChatChange(data);
           setTimeout(() => {
-            handlePollingImage({ id, host, key }).catch((err) => { throw err; });
+            handlePollingImage({ id, host, key }).catch((err: AxiosError<any>) => { 
+              handleError(err.response?.data?.error?.message || t('Something is wrong, please try again.'));
+              abortRef.current = true;
+            });
           }, 2000);
         } else {
           handleChatChange(data, true);
@@ -127,7 +134,10 @@ const MidJourneyChat: React.FC = function MidJourneyChat() {
         prompt: promptFlag ? value : '',
         imgs,
         ...rest
-      }).catch((err) => { throw err; });
+      }).catch((err: AxiosError<any>) => { 
+        handleError(err.response?.data?.error?.message || t('Something is wrong, please try again.'));
+        abortRef.current = true;
+      });
       if (res?.data.msg && res?.data.msg !== 'OK') {
         handleError(res.data.msg);
       } else {
@@ -149,7 +159,7 @@ const MidJourneyChat: React.FC = function MidJourneyChat() {
     handleFetch(text, { files }).catch(() => {});
   };
 
-  const handleStop = useCallback(() => { 
+  const handleStop = useCallback(() => {
     handleError(t('This request has been terminated.'));
     abortRef.current = true;
   }, [handleError, t]);
