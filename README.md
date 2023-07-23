@@ -29,6 +29,15 @@
 </table>
 </p>
 
+The following Sankey flow diagram shows the acker included:
+
+
+
+<p align="center">
+  <img src="https://github.com/matiassingers/awesome-readme/assets/50035229/4735d6ce-763b-4dc8-90f3-14a6d0f3de57" alt="@SankeyMATIC Diagram" />
+</p>
+
+
                                         
 # 🥷 Glossary
 
