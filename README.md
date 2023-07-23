@@ -21,6 +21,7 @@
     <li>🥡 Treating QA as a first-class role.</li>
     <li>❤️ Assisting AI-Hackers in easily gaining support from sponsors.</li>
 </ul>
+<img width="1000" height="0">
 </td>
 </tr>
 </table>
