@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
-  Button, ButtonGroup, Card, Popconfirm, Avatar 
+  Button, ButtonGroup, Card, Popconfirm, Avatar
 } from '@douyinfe/semi-ui';
 import { IconDelete, IconPlus, IconWrench } from '@douyinfe/semi-icons';
 import classNames from 'classnames';
@@ -18,7 +18,7 @@ const AssistantCard: React.FC<AssistantCardProps> = function AiCard(props) {
   } = props;
 
   const {
-    model, name, avatar, prompt, source 
+    model, name, avatar, prompt, source
   } = assistant;
 
   const disabled = source === 'system';
@@ -65,6 +65,7 @@ const AssistantCard: React.FC<AssistantCardProps> = function AiCard(props) {
           </Button>
           <Popconfirm
             trigger="click"
+            style={{ width: '280px' }}
             okText="ok"
             cancelText="cancel"
             title="Are you sure?"
