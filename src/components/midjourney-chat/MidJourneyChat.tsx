@@ -1,7 +1,5 @@
 /* eslint-disable no-console */
-import React, {
-  useRef, useState, useMemo, useCallback, useEffect 
-} from 'react';
+import React, { useRef, useState, useMemo, useCallback } from 'react';
 import { v4 as uuid } from 'uuid';
 import { useTranslation } from 'react-i18next';
 import { Toast } from '@douyinfe/semi-ui';
