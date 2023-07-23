@@ -18,10 +18,11 @@
 <h3><b>What is Acker up to ?</b></h3>
 <ul>
     <li>😀 Awesome chat experience, similar to using a terminal</li>
-    <li>🪖 Support numerous amazing actions by cmdk</li>
-    <li>🤞 Enabling users to do everything through chat! Such as `Login`, `Blog`, among others.</li>
+    <li>🪖 Support numerous amazing cmdk actions</li>
+    <li>🤞 Enable users to do everything through chat (e.g., `Login`, `Blog`)</li>
+    <li>🥁 Exploratory LUI，power by Langchain.</li>
     <li>🥡 Treating QA as a first-class role.</li>
-    <li>❤️ Assisting AI-Hackers in easily gaining support from sponsors.</li>
+    <li>❤️ Assist AI-Hackers in easily gaining support from sponsors.</li>
 </ul>
 <img width="1000" height="0">
 </td>
@@ -29,14 +30,14 @@
 </table>
 </p>
 
-
+  
 <p align="center">
   𝙏𝙝𝙚 𝙛𝙤𝙡𝙡𝙤𝙬𝙞𝙣𝙜 𝙎𝙖𝙣𝙠𝙚𝙮-𝙛𝙡𝙤𝙬 𝙙𝙞𝙖𝙜𝙧𝙖𝙢 𝙨𝙝𝙤𝙬𝙨 𝙩𝙝𝙚 𝙖𝙘𝙠𝙚𝙧 𝙞𝙣𝙘𝙡𝙪𝙙𝙚𝙙 
 </p>
 
 
 <p align="center">
-  <img src="https://github.com/matiassingers/awesome-readme/assets/50035229/4735d6ce-763b-4dc8-90f3-14a6d0f3de57" alt="@SankeyMATIC Diagram" />
+  <img src="https://user-images.githubusercontent.com/50035229/255394571-68b097c0-17d3-4fd6-b4cf-5e2059fe9818.svg" alt="@SankeyMATIC Diagram" />
 </p>
 
 
