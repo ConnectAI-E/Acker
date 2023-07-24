@@ -73,8 +73,6 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
     setValue(v);
   }, []);
 
-  const inspirationRef = useRef<HTMLDivElement>(null);
-
   const handleOpenInspiration = (e?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e?.stopPropagation();
     setShowInspire((pre) => !pre);
