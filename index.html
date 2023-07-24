@@ -16,12 +16,32 @@
 <body class="font-sans bg-gray-100 dark:bg-[#17191f]">
   <div id="app"></div>
   <script>
+    const changeTheme = (theme) => {
+      const html = document.getElementsByTagName('html')[0];
+      html.classList.remove(theme === 'light' ? 'dark' : 'light');
+      html.classList.add(theme);
+      html.style.colorScheme = theme;
+      document.body.setAttribute('theme-mode', theme);
+      if (theme === 'light' && document.body.hasAttribute('theme-mode')) {
+        document.body.removeAttribute('theme-mode');
+      }
+    };
     (function () {
       const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
       const setting = localStorage.getItem('theme') || 'auto';
       if (setting === 'dark' || (prefersDark && setting !== 'light')) {
         document.documentElement.classList.toggle('dark', true);
         document.body.setAttribute('theme-mode', 'dark');
+      }
+      if (setting === 'auto' && prefersDark) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+          const currentMode = event.matches ? 'dark' : 'light';
+          if (currentMode === 'dark') {
+            changeTheme('dark');
+          } else {
+            changeTheme('light');
+          }
+        });
       }
     })();
   </script>
