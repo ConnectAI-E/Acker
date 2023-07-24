@@ -30,7 +30,6 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
   const [t] = useTranslation();
 
   const [value, setValue] = useState<string>('');
-  const [height, setHeight] = useState<number>(26);
   const [showInspire, setShowInspire] = useState<boolean>(false);
   const [isComposition, setIsComposition] = useState<boolean>(false);
   const [files, setFiles] = useState<UploadedFile[]>([]);
@@ -40,13 +39,6 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
   const isMobile = useIsMobile();
 
   const { accept, multiple = true } = uploadProps || {};
-
-  useEffect(() => {
-    if (textareaRef.current) {
-      const h = value ? textareaRef.current.scrollHeight : 21;
-      setHeight(h);
-    }
-  }, [value]);
 
   useEffect(() => {
     const handlePaste = (event: ClipboardEvent) => {
@@ -79,17 +71,18 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
   };
 
   const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    const textArea = e.target as HTMLTextAreaElement;
+    setTimeout(() => {
+      textArea.style.height = '1px';
+      textArea.style.height = `${textArea.scrollHeight}px`;
+    });
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       if (loading || isComposition) return;
-      const textArea = e.target as HTMLTextAreaElement;
       const v = textArea?.value?.trim();
       if (v && isMobile) textArea?.blur();
       if (v) {
-        onFetchAnswer({
-          text: v,
-          files: files.filter((file) => file.uploaded && file.url),
-        });
+        onFetchAnswer({ text: v, files: files.filter((file) => file.uploaded && file.url) });
         setValue('');
         setFiles([]);
       }
@@ -97,7 +90,6 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
     if (e.key === 'Tab' && !e.shiftKey) {
       e.preventDefault();
       if (loading || isComposition) return;
-      const textArea = e.target as HTMLTextAreaElement;
       const v = textArea?.value?.trim();
       if (v) textArea?.blur();
       handleOpenInspiration();
@@ -128,11 +120,20 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
     setFiles([]);
   }, [loading, onFetchAnswer, value, files]);
 
-  const handleClickInspiration = (v: string) => {
+  const handleClickInspiration = useCallback((v: string) => {
     setValue((pre) => `${pre}${v}`);
     setShowInspire(false);
     textareaRef.current?.focus();
-  };
+    const textareaElement = textareaRef.current;
+    if (textareaElement) {
+      textareaElement.focus();
+      setTimeout(() => {
+        textareaElement.style.height = '1px';
+        textareaElement.style.height = `${textareaElement?.scrollHeight}px`;
+      });
+    }
+  }, []);
+
   const handleFileChange = (_files: File[]) => {
     if (_files && _files.length > 0) {
       const filterSizeFiles = _files.filter((file) => {
@@ -193,8 +194,8 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
           ) }
           <textarea
             ref={textareaRef}
-            className={classNames('w-full scrollbar-hide m-0 pr-4 pl-3 text-black dark:text-white', styles.textarea)}
-            style={{ maxHeight: '200px', height }}
+            className={classNames('w-full scrollbar-hide m-0 pr-4 pl-2 text-black dark:text-white', styles.textarea)}
+            style={{ maxHeight: '200px', height: '21px' }}
             value={value}
             placeholder={placeholder || t('chat input placeholder')}
             onChange={handleChange}
