@@ -3,14 +3,14 @@ import { useSWRConfig } from 'swr';
 import { useTranslation } from 'react-i18next';
 import {
   Button,
-  Input,
   Empty,
-  SideSheet,
-  Toast,
+  Input,
   List,
+  SideSheet,
   Skeleton,
+  Spin,
+  Toast,
   Typography,
-  Spin
 } from '@douyinfe/semi-ui';
 import { IconSearch } from '@douyinfe/semi-icons';
 import type { Assistant, ChatList } from '@/global';
@@ -53,8 +53,10 @@ function User() {
 
   const afterUpdate = (id: string) => {
     setLoading(true);
-    mutate().catch(() => {}).finally(() => setLoading(false));
-    mutateGlobal(`/assistant/${id}`, undefined, { revalidate: true }).catch(() => {});
+    mutate().catch(() => {
+    }).finally(() => setLoading(false));
+    mutateGlobal(`/assistant/${id}`, undefined, { revalidate: true }).catch(() => {
+    });
     setVisible(false);
   };
 
@@ -67,7 +69,12 @@ function User() {
     const author = session?.user.user_metadata.name || session?.user.user_metadata.user_name || session?.user.email;
     if (!changeFlag) {
       // 创建
-      const currentAssistant = { ...assistant, author, isPublic: false, userId: session?.user.id };
+      const currentAssistant = {
+        ...assistant,
+        author,
+        isPublic: false,
+        userId: session?.user.id,
+      };
       await uploadAssistant(currentAssistant).then((res) => {
         if (res?.data.message === 'OK') {
           afterUpdate(assistant.id);
@@ -75,7 +82,8 @@ function User() {
         } else {
           Toast.error(res?.data.message || t('creation.failed'));
         }
-      }).catch(() => {});
+      }).catch(() => {
+      });
     } else {
       await updateAssistant({ ...assistant }).then((res) => {
         if (res?.data.message === 'OK') {
@@ -93,7 +101,8 @@ function User() {
         } else {
           Toast.error(res?.data.message || t('update.failed'));
         }
-      }).catch(() => {});
+      }).catch(() => {
+      });
     }
   };
 
@@ -109,7 +118,8 @@ function User() {
       Toast.error(error.message);
     }).finally(() => {
       setLoading(true);
-      mutate().catch(() => {}).finally(() => setLoading(false));
+      mutate().catch(() => {
+      }).finally(() => setLoading(false));
     });
   };
 
@@ -132,7 +142,7 @@ function User() {
 
   const renderSkeleton = () => (
     <List.Item style={{ padding: '0 10px', marginBottom: '20px' }}>
-      <Skeleton.Title className="w-full h-[168px] rounded-lg" />
+      <Skeleton.Title className="w-full h-[140px] rounded-lg" />
     </List.Item>
   );
 
@@ -145,39 +155,80 @@ function User() {
   const filterAssistants = data?.filter(filterAssistantsFc) || [];
 
   return (
-    <ResponsiveLayout className="overflow-hidden px-5 py-2 flex flex-col" hiddenHeader>
+    <ResponsiveLayout
+      className="overflow-hidden px-5 py-2 flex flex-col"
+      hiddenHeader
+    >
       <div className="flex flex-shrink-0 w-1/2 my-5 max-md:w-full">
-        <Input prefix={<IconSearch />} placeholder={t('Search')} value={searchValue} onChange={setSearchValue} />
-        <Button className="!ml-10" theme="solid" onClick={handleCreate}>{t('Create')}</Button>
+        <Input
+          prefix={<IconSearch />}
+          placeholder={t('Search')}
+          value={searchValue}
+          onChange={setSearchValue}
+        />
+        <Button
+          className="!ml-10"
+          theme="solid"
+          onClick={handleCreate}
+        >
+          { t('Create') }
+        </Button>
       </div>
       <div className="h-0 flex-grow overflow-auto">
         <Spin wrapperClassName="!h-full" spinning={loading}>
-          {(presetLoading || presetAI.length > 0) && (
+          { (presetLoading || presetAI.length > 0) && (
             <>
-              <Typography.Title heading={2}>{t('system ai')}</Typography.Title>
+              <Typography.Title
+                heading={2}
+              >
+                { t('system ai') }
+              </Typography.Title>
               <div className="mt-[12px]">
                 <List
                   dataSource={presetLoading ? [1, 2, 3, 4] as any[] : presetAI}
                   renderItem={presetLoading ? renderSkeleton : renderItem}
                   grid={{
-                    xs: 24, sm: 12, md: 12, lg: 8, xl: 6, xxl: 6, className: 'min-[2160px]:w-1/6 min-[2480px]:w-[12.5%]'
+                    xs: 24,
+                    sm: 12,
+                    md: 12,
+                    lg: 8,
+                    xl: 6,
+                    xxl: 6,
+                    className: 'min-[2160px]:w-1/6 min-[2480px]:w-[12.5%]',
                   }}
-                  emptyContent={<div>{}</div>}
+                  emptyContent={<div>{ }</div>}
                 />
               </div>
             </>
-          )}
-          <Typography.Title heading={2}>{t('my ai')}</Typography.Title>
+          ) }
+          <Typography.Title heading={2}>{ t('my ai') }</Typography.Title>
           <div className="mt-[12px]">
             <List
-              dataSource={isLoading ? [1, 2, 3, 4, 5, 6, 7, 8] as any[] : filterAssistants}
+              dataSource={isLoading ? [1] as any[] : filterAssistants}
               renderItem={isLoading ? renderSkeleton : renderItem}
               grid={{
-                xs: 24, sm: 12, md: 12, lg: 8, xl: 6, xxl: 6, className: 'min-[2160px]:w-1/6 min-[2480px]:w-[12.5%]'
+                xs: 24,
+                sm: 12,
+                md: 12,
+                lg: 8,
+                xl: 6,
+                xxl: 6,
+                className: 'min-[2160px]:w-1/6 min-[2480px]:w-[12.5%]',
               }}
               emptyContent={(
-                <Empty title={t('no data.title')} description={!searchValue ? t('no data.user message') : ''}>
-                  {!searchValue && <Button className="w-full" theme="solid" onClick={handleCreate}>{t('Create')}</Button>}
+                <Empty
+                  title={t('no data.title')}
+                  description={!searchValue ? t('no data.user message') : ''}
+                >
+                  { !searchValue && (
+                    <Button
+                      className="w-full"
+                      theme="solid"
+                      onClick={handleCreate}
+                    >
+                      { t('Create') }
+                    </Button>
+                  ) }
                 </Empty>
               )}
             />
@@ -188,7 +239,7 @@ function User() {
         closable
         visible={visible}
         style={{ maxWidth: '80%' }}
-        bodyStyle={{ margin: '20px 0' }}
+        bodyStyle={{ margin: '20px 0', borderRadius: '20px' }}
         onCancel={() => setVisible(false)}
         headerStyle={{ display: 'none' }}
         getPopupContainer={() => document.querySelector('.layout-root') as HTMLElement}
