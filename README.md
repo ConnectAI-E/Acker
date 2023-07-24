@@ -20,7 +20,7 @@
     <li>😀 Incredible chat experience, like a pro terminal user</li>
     <li>🔫 Masterful drawing feature, rivaling midjourney</li>
     <li>🪖 Support numerous amazing cmdk actions</li>
-    <li>🤞 Enable users to do everything through chat (e.g., `Login`, `Blog`)</li>
+    <li>🤞 Enable users to do everything through chat (e.g., `Login Acker`, `Star Github Repo`)</li>
     <li>🥁 Exploratory LUI，power by Langchain.</li>
     <li>🥡 Treating QA as a first-class role.</li>
     <li>❤️ Assist AI-Hackers in easily gaining support from sponsors.</li>
