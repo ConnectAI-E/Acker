@@ -41,6 +41,16 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
   const { accept, multiple = true } = uploadProps || {};
 
   useEffect(() => {
+    const textareaElement = textareaRef.current;
+    if (textareaElement) {
+      setTimeout(() => {
+        textareaElement.style.height = '1px';
+        textareaElement.style.height = `${textareaElement?.scrollHeight}px`;
+      });
+    }
+  }, [value]);
+
+  useEffect(() => {
     const handlePaste = (event: ClipboardEvent) => {
       const pasteFiles = event.clipboardData?.files || [];
       const fileList = Array.from(pasteFiles);
@@ -72,10 +82,6 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
 
   const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     const textArea = e.target as HTMLTextAreaElement;
-    setTimeout(() => {
-      textArea.style.height = '1px';
-      textArea.style.height = `${textArea.scrollHeight}px`;
-    });
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       if (loading || isComposition) return;
@@ -124,14 +130,6 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
     setValue((pre) => `${pre}${v}`);
     setShowInspire(false);
     textareaRef.current?.focus();
-    const textareaElement = textareaRef.current;
-    if (textareaElement) {
-      textareaElement.focus();
-      setTimeout(() => {
-        textareaElement.style.height = '1px';
-        textareaElement.style.height = `${textareaElement?.scrollHeight}px`;
-      });
-    }
   }, []);
 
   const handleFileChange = (_files: File[]) => {
