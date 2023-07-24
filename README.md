@@ -17,7 +17,8 @@
 </a>
 <h3><b>What is Acker up to ?</b></h3>
 <ul>
-    <li>😀 Awesome chat experience, similar to using a terminal</li>
+    <li>😀 Incredible chat experience, like a pro terminal user!</li>
+    <li>🔫 Masterful drawing feature, rivaling mijdourney!</li>
     <li>🪖 Support numerous amazing cmdk actions</li>
     <li>🤞 Enable users to do everything through chat (e.g., `Login`, `Blog`)</li>
     <li>🥁 Exploratory LUI，power by Langchain.</li>
