@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { useTranslation, Trans } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { Button, Form, Spin } from '@douyinfe/semi-ui';
 import { useLoginOutlet } from '..';
 
@@ -25,10 +25,17 @@ function VerificationForm() {
   };
 
   return (
-    <Form className="mx-auto sm:w-[400px] w-full max-md:px-[20px]" onSubmit={handleSubmit}>
+    <Form
+      className="mx-auto sm:w-[400px] w-full max-md:px-[20px]"
+      onSubmit={handleSubmit}
+    >
       <div className="text-center dark:text-white">
         <h1 className="text-2xl font-semibold tracking-tight my-2">
-          <Trans t={t} i18nKey="check tips" values={{ type: email ? t('email.lower') : t('phone.lower') }} />
+          <Trans
+            t={t}
+            i18nKey="check tips"
+            values={{ type: email ? t('email.lower') : t('phone.lower') }}
+          />
         </h1>
         <p className="text-slate-500 dark:text-slate-400">
           <Trans
@@ -41,6 +48,7 @@ function VerificationForm() {
       </div>
       <Spin spinning={loading}>
         <Form.Input
+          size="large"
           noLabel
           field="code"
           placeholder={t('login code placeholder')}
@@ -48,8 +56,12 @@ function VerificationForm() {
           trigger="blur"
           showClear
         />
-        <Button size="large" className="w-full !bg-black !text-white dark:!bg-slate-50 dark:!text-slate-900 my-5" htmlType="submit">
-          {t('code sign in')}
+        <Button
+          size="large"
+          className="w-full !bg-black !text-white dark:!bg-slate-50 dark:!text-slate-900 my-5"
+          htmlType="submit"
+        >
+          { t('code sign in') }
         </Button>
       </Spin>
     </Form>
