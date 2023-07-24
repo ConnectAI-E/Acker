@@ -13,11 +13,12 @@
 <tr>
 <td>
 <a href="#banner">
-  <img align="left" src="https://github.com/ConnectAI-E/acker/assets/50035229/a00b3fa8-881a-4221-820d-4784d98a421e" height='230px'">
+  <img align="left" src="https://github.com/ConnectAI-E/acker/assets/50035229/a00b3fa8-881a-4221-820d-4784d98a421e" height='250px'">
 </a>
 <h3><b>What is Acker up to ?</b></h3>
 <ul>
-    <li>😀 Awesome chat experience, similar to using a terminal</li>
+    <li>😀 Incredible chat experience, like a pro terminal user</li>
+    <li>🔫 Masterful drawing feature, rivaling midjourney</li>
     <li>🪖 Support numerous amazing cmdk actions</li>
     <li>🤞 Enable users to do everything through chat (e.g., `Login`, `Blog`)</li>
     <li>🥁 Exploratory LUI，power by Langchain.</li>
@@ -37,7 +38,7 @@
 
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/50035229/255394571-68b097c0-17d3-4fd6-b4cf-5e2059fe9818.svg" alt="@SankeyMATIC Diagram" />
+  <img src="https://github.com/ConnectAI-E/Acker/assets/50035229/98c8f182-dc2f-4f4e-8352-1639c27fdd23" alt="@SankeyMATIC Diagram" />
 </p>
 
 
