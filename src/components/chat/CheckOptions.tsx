@@ -37,7 +37,7 @@ const CheckOptions: React.FC<CheckOptionsProps> = function CheckOptions(props) {
 
   const { checkList, chatId, dispatch, setCheckFlag } = useCurrentChat();
 
-  const [mode] = useTheme();
+  const { currentTheme } = useTheme();
 
   const indeterminate = checkList.length > 0 && checkList.length !== data.length;
   const checked = checkList.length === data.length;
@@ -109,7 +109,7 @@ const CheckOptions: React.FC<CheckOptionsProps> = function CheckOptions(props) {
       title: t('ai assistant'),
       fullScreen: true,
       bodyStyle: { overflow: 'auto' },
-      className: mode === 'dark' ? styles.fullModalDark : styles.fullModalLight,
+      className: currentTheme === 'dark' ? styles.fullModalDark : styles.fullModalLight,
       content: <AssistantWrapper session={session} onClickItem={handleCreateChat} />,
       icon: null,
       footer: null
