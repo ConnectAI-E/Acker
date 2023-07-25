@@ -33,7 +33,7 @@
         document.documentElement.classList.toggle('dark', true);
         document.body.setAttribute('theme-mode', 'dark');
       }
-      if (setting === 'auto' && prefersDark) {
+      if (setting === 'auto' && typeof window.matchMedia === 'function') {
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
           const currentMode = event.matches ? 'dark' : 'light';
           if (currentMode === 'dark') {
