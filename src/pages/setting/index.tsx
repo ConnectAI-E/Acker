@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import {
   Avatar, Button, Form, Typography, Toast, Spin 
 } from '@douyinfe/semi-ui';
-import { IconUser } from '@douyinfe/semi-icons';
+import { IconExternalOpen, IconUser } from '@douyinfe/semi-icons';
 import GeneralConfig from '@/components/general-config';
 import LoginTips from '@/components/login-tips';
 import ApiKey from '@/components/api-key';
@@ -38,6 +38,23 @@ function Setting() {
       Toast.error(error.message);
     }
   };
+
+  /**
+   * @deprecated
+   */
+  const handleOpenKeyDetail = () => {
+    if (session?.access_token) {
+      const params = new URLSearchParams();
+      params.append('access_token', session.access_token);
+      params.append('expires_in', session.expires_in.toString());
+      if (session.provider_token) {
+        params.append('provider_token', session.provider_token);
+      }
+      params.append('refresh_token', session.refresh_token);
+      params.append('token_type', 'bearer');
+      window.open(`https://key.aios.chat/login/callback#${params.toString()}`);
+    }
+  };
   
   const renderInfoItem = useCallback((lable: string, info?: string) => {
     if (!info) return null;
@@ -68,7 +85,12 @@ function Setting() {
             </Form.Section>
             {Array.isArray(apiKeys) && apiKeys.length > 0 && (
               <div className="mt-8">
-                <Typography.Title heading={6}>{t('api keys')}</Typography.Title>
+                <Typography.Title heading={6} className="flex items-center">
+                  {t('api keys')}
+                  <Typography.Text link className="ml-4" onClick={handleOpenKeyDetail}>
+                    <IconExternalOpen />
+                  </Typography.Text>
+                </Typography.Title>
                 {apiKeys.map((key) => <ApiKey apiKey={key} key={key.id} />)}
               </div>
             )}
