@@ -6,6 +6,7 @@ import { v4 as uuid } from 'uuid';
 import classNames from 'classnames';
 import Loading from '@/components/loading';
 import useIsMobile from '@/hooks/useIsMobile';
+import useWindowResize from '@/hooks/useWindowResize';
 import Files from './Files';
 import Inspiration from './Inspiration';
 import type { AutoTextAreaProps } from './AutoTextArea';
@@ -69,6 +70,16 @@ const AutoTextArea: React.FC<AutoTextAreaProps> = function AutoTextArea(props) {
       textareaElement?.removeEventListener('paste', handlePaste);
     };
   }, [t]);
+
+  useWindowResize(() => {
+    const textareaElement = textareaRef.current;
+    if (textareaElement) {
+      setTimeout(() => {
+        textareaElement.style.height = '1px';
+        textareaElement.style.height = `${textareaElement?.scrollHeight}px`;
+      });
+    }
+  });
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const { value: v } = e.target;

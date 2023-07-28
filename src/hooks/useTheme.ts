@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 
 type Theme = 'dark' | 'light';
 type Mode = Theme | 'auto';
