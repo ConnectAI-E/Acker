@@ -78,26 +78,6 @@ const ConversationItem: React.FC<ConversationProps> = function ConversationItem(
     </div>
   ), [checkFlag, checked, renderAvator]);
 
-  const renderContent = useMemo(() => (
-    <div className="markdown-body w-0 flex-grow">
-      <div
-        className={classNames('min-h-[20px] flex flex-col items-start gap-4', {
-          [styles.error]: error,
-          [styles.loading]: !stop && character !== 'user',
-          [styles.start]: character !== 'user' && !value,
-          'whitespace-pre-line': character === 'user'
-        })}
-        onDoubleClick={handleEditor}
-      >
-        {editorKey === key ? (
-          <Editor value={value} onSave={handleSave} onCancel={() => setEditorKey('')} />
-        ) : (
-          <Markdown hiddenButtons={checkFlag} data={data} onEdit={handleEditor} />
-        ) }
-      </div>
-    </div>
-  ), [character, key, stop, value, data, editorKey, checkFlag, error, handleEditor, handleSave]);
-
   return (
     <div
       onClick={handleCheckChange}
@@ -110,7 +90,23 @@ const ConversationItem: React.FC<ConversationProps> = function ConversationItem(
     >
       <div className="gap-6 m-auto md:max-w-2xl lg:max-w-2xl xl:max-w-3xl p-4 md:py-6 flex lg:px-0">
         {renderHeader}
-        {renderContent}
+        <div className="markdown-body w-0 flex-grow">
+          <div
+            className={classNames('min-h-[20px] flex flex-col items-start gap-4', {
+              [styles.error]: error,
+              [styles.loading]: !stop && character !== 'user',
+              [styles.start]: character !== 'user' && !value,
+              'whitespace-pre-line': character === 'user'
+            })}
+            onDoubleClick={handleEditor}
+          >
+            {editorKey === key ? (
+              <Editor value={value} onSave={handleSave} onCancel={() => setEditorKey('')} />
+            ) : (
+              <Markdown hiddenButtons={checkFlag} data={data} onEdit={handleEditor} />
+            ) }
+          </div>
+        </div>
       </div>
     </div>
   );
